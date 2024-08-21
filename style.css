@@ -2159,8 +2159,6 @@ p {
         overflow-y: auto; /* Thêm cuộn dọc nếu nội dung vượt quá */
     }
 
-    
-
     .preview__header {
         z-index: 1000;
         display: flex;
