@@ -2127,6 +2127,10 @@ p {
         flex-direction: column;
         width: 24px;
     }
+
+    .tick-icon::before { 
+        font-size: 0.2vw; 
+    }
     
     .icon-line {
         height: 2px;
