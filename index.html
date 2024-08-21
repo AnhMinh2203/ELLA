@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+<script src="https://kit.fontawesome.com/cce3effa95.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+</head>
+<body>
+<header>
+    <div class="preview__header">
+        <div class="preview__envato-logo">
+            <a class="header-envato_market" href="https://themeforest.net/item/ella-multipurpose-shopify-theme-os-20/9691007">Envato Market</a>
+        </div>
+        <div id="js-preview__actions" class="preview__actions">
+            <div class="preview__action--buy">
+                <a class="header-buy-now e-btn--3d -color-primary" href="https://themeforest.net/checkout/from_item/9691007?license=regular&amp;support=bundle_6month">Buy now</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="banner">
+        <div class="marquee">
+            <p><span class="icon">⚡</span> SPECIAL OFFER: START SHOPIFY with <span class="highlight">3 DAYS FREE + 1 MONTH FOR $1</span></p>
+        </div>
+    </div>
+    
+
+   
+    <nav class="navbar">
+            
+            <div class="banner-parallax-layer blob">
+                <img class="banner-parallax-image" src="assets/images/parallax-layer-red.png" alt="Parallax Layer Red">
+            </div>
+            <div class="button-3 button-3-up">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+            <div class="button-3 button-3-discover">
+                Discover now !
+            </div>
+            <div class="button-3 button-3-chat">
+                <i class="fas fa-comments"></i>
+            </div>
+        
+            <script>
+                window.addEventListener('scroll', function() {
+                    const blob = document.querySelector('.banner-parallax-layer.blob');
+                    if (window.scrollY > 100) {
+                        blob.style.transform = 'translateX(100px)'; /* Di chuyển phần tử blob sang phải */
+                    } else {
+                        blob.style.transform = 'translateX(0)'; /* Di chuyển phần tử blob về vị trí cũ */
+                    }
+                });
+            </script>
+        <div class="navbar-left">
+            <div id="nav-menu-icon">
+                <button type="button" class="icon-nav" aria-label="Open side menu">
+                    <span class="icon-line"></span>
+                    <span class="icon-line"></span>
+                    <span class="icon-line"></span>
+                </button>
+            </div>
+            <div class="logo">
+                <img src="assets/images/ella-logo-retina.png" alt="ella logo">
+            </div>
+            <div class="overlay"><!-- Overlay đè lên phần còn lại của trang -->
+                <ul class="navbar-menu">
+                    <button class="close-menu">&times;</button> <!-- Nút đóng menu -->
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Page Layouts</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Performance</a></li>
+                    <li><a href="#">User Guide</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li class="exclusive-offers"><a href="#">Exclusive Offers</a></l>
+                </ul>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <button class="button change-logs">Change Logs</button>
+            <button class="button open-store-now">Open Store Now</button>
+        </div>
+    </nav>
+
+    <script>
+        function updateCloseMenuVisibility() {
+            const closeMenuButton = document.querySelector('.navbar-menu .close-menu');
+            
+            if (window.innerWidth > 1024) {
+                closeMenuButton.style.display = 'none';
+            } else {
+                closeMenuButton.style.display = 'block';
+                closeMenuButton.style.position = 'absolute';
+            }
+        }
+    
+        // Gọi hàm khi tải trang
+        window.addEventListener('load', updateCloseMenuVisibility);
+    
+        // Gọi hàm khi thay đổi kích thước cửa sổ
+        window.addEventListener('resize', updateCloseMenuVisibility);
+    </script>
+    
+
+    
+
+    <script>
+        document.querySelector('.icon-nav').addEventListener('click', function() {
+    document.querySelector('.navbar-menu').classList.toggle('active');
+    document.querySelector('.overlay').classList.toggle('active');
+    document.body.classList.toggle('overlay-active'); // Ngăn cuộn trang
+});
+
+document.querySelector('.overlay').addEventListener('click', function(e) {
+    if (e.target === this || e.target.classList.contains('close-menu')) {
+        document.querySelector('.navbar-menu').classList.remove('active');
+        document.querySelector('.overlay').classList.remove('active');
+        document.body.classList.remove('overlay-active'); // Cho phép cuộn lại trang
+    }
+});
+
+    </script>
+
+<section class="hero">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1>Creative multi-purpose <span class="highlight">Shopify</span> theme</h1>
+            <p class="subheading">#1 Best Selling Shopify Theme of all time on Envato.</p>
+            <p class="description">An all-in-one template for your Shopify store, allowing you to create various structures and meet specific requirements.</p>
+    <div class="buttons">
+            <a href="#" class="btn buy">Buy Theme</a>
+            <a href="#" class="btn trial">Start FREE Trial</a>
+    </div>
+            <h2 class="note">Start for free, then get your <br> <span class="highlight-2">first month for only 1 $/mo.</span></h2>
+        </div>
+        <div class="macbook-slider">
+            
+            <img class="banner-parallax-main-image" src="assets/images/banner-desktop-illustration.jpg" alt="Desktop Illustration 1">
+            <img class="banner-parallax-main-image" src="assets/images/FASHION2.png" alt="Fashion 2">
+            <img class="banner-parallax-main-image" src="assets/images/ELECTRONIC.png" alt="Electronic">
+            <img class="banner-parallax-main-image" src="assets/images/PET.png" alt="Pet">
+        </div>
+    </div>
+        
+            <div class="iphone-slider">
+                <img class="banner-parallax-main-image2" src="assets/images/banner-mobile-illustration-1.jpg" alt="Mobile Illustration 1">
+                <img class="banner-parallax-main-image2" src="assets/images/FASHION2_MOBILE.png" alt="Fashion 2 Mobile">
+                <img class="banner-parallax-main-image2" src="assets/images/ELECTRONIC_MOBILE.png" alt="Electronic Mobile">
+                <img class="banner-parallax-main-image2" src="assets/images/PET_MOBILE.png" alt="Pet Mobile">
+            </div>
+
+
+            
+            <div class="spinner">
+            <div class="spinner-pause-btn">
+                <div class="pause-icon">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>             
+</section>
+
+    
+
+<script>
+    $(document).ready(function(){
+        $('.macbook-slider').slick({
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: false
+        });
+        $('.iphone-slider').slick({
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: false
+        });
+    });
+</script>
+    
+
+<div class="banner-2" id="banner">
+    <span class="offer-text">3 Days Free + 1 Month for $1 - Start your Shopify FREE TRIAL </span>
+    <span class="arrow">--→</span>
+    <span class="close-btn" id="close-btn">✕</span>
+</div>
+
+<div class="banner-parallax-layer triangle">
+    <img class="banner-parallax-image" src="assets/images/parallax-triangle.png" alt="Parallax Triangle">
+</div>
+</header>
+<main>
+    <div class="slide-introduce">
+            <div class="slide">
+                    <div class="slide-item">
+                        <div class="button">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                            <div class="content-wrapper"> 
+                                <h3>UI/UX</h3>
+                                <p>Mobile Optimized Design &amp; Incredible Design/UI/UX, keep your store looking fresh and perfect.</p>
+                            </div>
+                        </div>
+                    <div class="slide-item">
+                        <div class="button">
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <div class="content-wrapper">
+                            <h3>Stunning Design</h3>
+                            <p>Want to increase your sales just in the first visit. Come to us &amp; you will see how miracle our flagship shopify themes are.</p>
+                        </div>
+                    </div>
+                    <div class="slide-item">
+                        <div class="button">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                        <div class="content-wrapper">
+                            <h3>Easy to Use and Implement</h3>
+                            <p>We analyze, then support you the best methods for any necessary processes or features make your website operate stably and smoothly.</p>
+                        </div>
+                    </div>
+                    <div class="slide-item">
+                        <div class="button">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="content-wrapper">
+                            <h3>Outstanding Support</h3>
+                            <p>Get the best technical support around! If you have questions or problems, just Contact us, we're here to help!</p>
+                        </div>
+                    </div>
+                    <div class="slide-item">
+                        <div class="button">
+                            <i class="fa-regular fa-credit-card"></i>
+                        </div>
+                        <div class="content-wrapper">
+                            <h3>Browser Compatibility</h3>
+                            <p>One of our goal is to bring you compatible themes with most of the commonly used browsers which become a business core advantage.</p>
+                        </div>
+                    </div>
+                    <div class="slide-item">
+                        <div class="button">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <div class="content-wrapper">
+                            <h3>Search Engine Optimization</h3>
+                            <p>Combination of SEO and our web development team make a powerful weapon to get super high conversion rate websites.</p>
+                        </div>
+                    </div>   
+            </div>
+        </div>
+ 
+
+
+    <div class="achievements">
+        <div class="achievement-1">
+            <h1>The Achievements We Get</h1>
+            <p>We always try harder every day to give our customers the best experience.</p>
+        </div>
+        </div>
+        <div class="achievement-2">
+            <div class="slide-2">
+                <div class="achievement-item">
+                    <div class="button-1">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div class="content-wrapper-1">
+                        <p>Sales</p>
+                        <h1>39,000+</h1>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="button-1">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="content-wrapper-1">
+                        <p>Customers</p>
+                        <h1>39,000+</h1>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="button-1">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="content-wrapper-1">
+                        <p>Reviews</p>
+                        <h1>1100+</h1>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="achievement-3">
+        <div class="right">
+            <img src = "assets/images/elite-author.png" alt="img1">
+        </div>
+        <div class="left">
+            <img src = "assets/images/top-theme.png" alt="img2">
+        </div>
+    </div>
+    <div class="achievement-4">
+        <div class="top">
+            <h2>50</h2><br>
+            
+            <h1>Home Pages</h1>
+        </div>
+        <div class="bot">
+            <p>28+ Available Homepages, more are coming soon. Multiple layouts and styles with multiple flexible theme sections allow you to create different structures and satisfy any specific requirements. Ella is fully compatible with Shopify OS 2.0, offers the maximum customizability.</p>
+        </div>
+    </div>
+    
+
+    <div class="list-list">
+    <div class="list">
+        <ul>
+            <li><a href="all.html"><p>All</p></a></li>
+            <li><a href="fashion.html"><p>Fashion</p></a></li>
+            <li><a href="accessories.html"><p>Accessories</p></a></li>
+            <li><a href="health-beauty.html"><p>Health & Beauty</p></a></li>
+            <li><a href="home-garden.html"><p>Home & Garden</p></a></li>
+            <li><a href="electronics-supermarket.html"><p>Electronics & Supermarket</p></a></li>
+            <li><a href="sports-recreation.html"><p>Sports & Recreation</p></a></li>
+        </ul>
+    </div>
+    </div>
+
+    <div class="list-products">
+        <div class="wrapper">
+            <ul class="products">
+                <li data-category="fashion">
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-home-1.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Homepage  > Home 1</p>
+                            <h3>Classic</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li data-category="fashion">
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-home-2.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Homepage  > Home 2</p>
+                            <h3>Trendy Style</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li data-category="fashion">
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-home-3.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Homepage  > Home 3</p>
+                            <h3>In Vogue</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li data-category="fashion">
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-home-4.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Homepage  > Home 4</p>
+                            <h3>High Fashion</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-home-5.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Homepage  > Home 5</p>
+                            <h3>Surfing</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-home-6.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Homepage  > Home 6</p>
+                            <h3>Supermarket</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-home-7.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Homepage  > Home 7</p>
+                            <h3>Electronics</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-home-8.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Homepage  > Home 8</p>
+                            <h3>Large Catalogs</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-home-9.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Homepage  > Home 9</p>
+                            <h3>Pet Supplies</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-home-10.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Homepage  > Home 10</p>
+                            <h3>Jewelry</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-home-11.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Homepage  > Home 11</p>
+                            <h3>Health & Beauty</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-home-12.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Homepage  > Home 12</p>
+                            <h3>Men Fashion</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-home-13.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Homepage  > Home 13</p>
+                            <h3>Winter Sport</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-home-14.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Homepage  > Home 14</p>
+                            <h3>Automotive 1</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-home-15.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Homepage  > Home 15</p>
+                            <h3>Automotive 2</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item-1">
+                        <div class="product-top-1">
+                            <a href="fashion.html" class="">
+                                <img src="assets/images/ella-add-more.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom-1">
+                            
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>   
+    
+    <div class="list-list-1">
+        <div class="list-1">
+            <ul>
+                <li><a href="#"><p>Category Pages</p></a></li>
+                <li><a href="#"><p>Collection Pages</p></a></li>
+                <li><a href="#"><p>Product Pages</p></a></li>
+                <li><a href="#"><p>Blogs & Blog Details</p></a></li>
+                <li><a href="#"><p>Other Pages</p></a></li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <div class="bot-1">
+        <p>Ella comes with multiple powerful layouts with a great combination of Minimalism, Modernism or even the neutralism design and a number of powerful features, allow you to create any website in just a minutes.</p>
+    </div>
+    <div class="list-products">
+        <div class="wrapper">
+            <ul class="products">
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-category-1.jpg">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Category > ...</p>
+                            <h3>Left Sidebar</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-category-2.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Category > ...</p>
+                            <h3>No Sidebar</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-category-3.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Category > ...</p>
+                            <h3>Right Sidebar</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-category-4.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Category > ...</p>
+                            <h3>Masonry</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-category-5.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Category > ...</p>
+                            <h3>With Banners</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-category-6.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Category > ...</p>
+                            <h3>Expess Order</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-category-7.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Category > ...</p>
+                            <h3>Category 7</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-category-4.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Category  > ...</p>
+                            <h3>Category 8</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-item">
+                        <div class="product-top">
+                            <a href="#" class="new-button">New</a>
+                            <a href="fashion.html" class="product-thumb">
+                                <img src="assets/images/ella-category-4.jpg" alt="">
+                            </a>
+                            <a href="fashion.html" class="see-details"></a>
+                        </div>
+                        <div class="product-bottom">
+                            <p>Category  > ...</p>
+                            <h3>Category 9</h3>
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryLinks = document.querySelectorAll('.list-list .list ul li a');
+            const productItems = document.querySelectorAll('.products li');
+    
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const category = this.getAttribute('href').split('.')[0]; // Assuming href is 'fashion.html'
+                    
+                    productItems.forEach(item => {
+                        if (item.getAttribute('data-category') === category || category === 'all') {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <div class="list-list-2">
+        <div class="top-2">
+            <h1>Gorgeous Child Themes</h1>
+            <p>05 Child themes are included in Ella package for FREE to use.<br>
+                They are the different themes and work separately</p>
+    </div>
+    <div class="bot-2">
+        <p>Note: Child themes have not updated to Online Store 2.0 yet, from now we will include design of Child Themes into Ella 6 and will remove them when we finish in next version of Ella 6.</p>
+    </div>
+
+    <div class="product-carousel">
+        <div>
+          <div class="product-item">
+              <div class="product-top">
+                  <a href="#" class="new-button">New</a>
+                  <a href="fashion.html" class="product-thumb">
+                      <img src="assets/images/jewel-home1.png" alt="">
+                  </a>
+                  <a href="fashion.html" class="see-details"></a>
+              </div>
+              <div class="product-bottom">
+                  <p>Child Themes > Jewelry 1</p>
+                  <h3>Jewelry 1</h3>
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+              </div>
+          </div>
+        </div>
+        <div>
+          <div class="product-item">
+              <div class="product-top">
+                  <a href="#" class="new-button">New</a>
+                  <a href="fashion.html" class="product-thumb">
+                      <img src="assets/images/jewel-home2.png" alt="">
+                  </a>
+                  <a href="fashion.html" class="see-details"></a>
+              </div>
+              <div class="product-bottom">
+                  <p>Child Themes > Jewelry 2</p>
+                  <h3>Jewelry 2</h3>
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+              </div>
+          </div>
+        </div>
+        <div>
+          <div class="product-item">
+              <div class="product-top">
+                  <a href="#" class="new-button">New</a>
+                  <a href="fashion.html" class="product-thumb">
+                      <img src="assets/images/caros-home1.png" alt="">
+                  </a>
+                  <a href="fashion.html" class="see-details"></a>
+              </div>
+              <div class="product-bottom">
+                  <p>Child Themes > Caros Home 1</p>
+                  <h3>Caros Home 1</h3>
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+              </div>
+          </div>
+        </div>
+        <div>
+          <div class="product-item">
+              <div class="product-top">
+                  <a href="#" class="new-button">New</a>
+                  <a href="fashion.html" class="product-thumb">
+                      <img src="assets/images/caros-home2.png" alt="">
+                  </a>
+                  <a href="fashion.html" class="see-details"></a>
+              </div>
+              <div class="product-bottom">
+                  <p>Child Themes > Caros Home 2</p>
+                  <h3>Caros Home 2</h3>
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+              </div>
+          </div>
+        </div>
+        <div>
+          <div class="product-item">
+              <div class="product-top">
+                  <a href="#" class="new-button">New</a>
+                  <a href="fashion.html" class="product-thumb">
+                      <img src="assets/images/caros-home3.png" alt="">
+                  </a>
+                  <a href="fashion.html" class="see-details"></a>
+              </div>
+              <div class="product-bottom">
+                  <p>Child Themes > Caros Home 3</p>
+                  <h3>Caros Home 3</h3>
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+              </div>
+          </div>
+        </div>
+        <div>
+          <div class="product-item">
+              <div class="product-top">
+                  <a href="#" class="new-button">New</a>
+                  <a href="fashion.html" class="product-thumb">
+                      <img src="assets/images/luxwatch-home1.png" alt="">
+                  </a>
+                  <a href="fashion.html" class="see-details"></a>
+              </div>
+              <div class="product-bottom">
+                  <p>Child Themes > Luxwatch Home 1</p>
+                  <h3>Luxwatch Home 1</h3>
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+              </div>
+          </div>
+        </div>
+        <div>
+          <div class="product-item">
+              <div class="product-top">
+                  <a href="#" class="new-button">New</a>
+                  <a href="fashion.html" class="product-thumb">
+                      <img src="assets/images/luxwatch-home2.png" alt="">
+                  </a>
+                  <a href="fashion.html" class="see-details"></a>
+              </div>
+              <div class="product-bottom">
+                  <p>Child Themes > Luxwatch Home 2</p>
+                  <h3>Luxwatch Home 2</h3>
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+              </div>
+          </div>
+        </div>
+        <div>
+          <div class="product-item">
+              <div class="product-top">
+                  <a href="#" class="new-button">New</a>
+                  <a href="fashion.html" class="product-thumb">
+                      <img src="assets/images/tea.png" alt="">
+                  </a>
+                  <a href="fashion.html" class="see-details"></a>
+              </div>
+              <div class="product-bottom">
+                  <p>Child Themes > Tea and Coffee</p>
+                  <h3>Tea And Coffee</h3>
+                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+      
+      <script type="text/javascript">
+        $(document).ready(function(){
+          $('.product-carousel').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: false,
+            arrows: true,
+            prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+            nextArrow: '<button type="button" class="slick-next">Next</button>',
+            responsive: [
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  infinite: true,
+                  dots: false
+                }
+              },
+              {
+                breakpoint: 600,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1
+                }
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+                }
+              }
+            ]
+          });
+        });
+      </script>
+      
+
+
+    
+    
+
+
+    <div class="center">
+        <img src = "assets/images/Affiliate.png" alt="img3">
+    </div>
+
+    <div class="top-2">
+        <h1>Save $1000+ with our built-in <br> theme features for Free</h1>
+        <p>You don’t need to pay more for additional Apps</p>
+    </div>
+
+    <div class="table-list">
+        <div class="column">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Features</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bundles & Discounts</td>
+                    </tr>
+                    <tr class="highlighted">
+                        <td>Advanced Mega Menu</td>
+                    </tr>
+                    <tr>
+                        <td>Product Filtering</td>
+                    </tr>
+                    <tr class="highlighted">
+                        <td>Product Compare</td>
+                    </tr>
+                    <tr>
+                        <td>Free shipping threshold</td>
+                    </tr>
+                    <tr class="highlighted">
+                        <td>Countdown Timer</td>
+                    </tr>
+                    <tr>
+                        <td>Quick Shop</td>
+                    </tr>
+                    <tr class="highlighted">
+                        <td>Cart Upsell</td>
+                    </tr>
+                    <tr>
+                        <td>Size Chart</td>
+                    </tr>
+                    <tr class="highlighted">    
+                        <td>Wish Lists</td>
+                    </tr>
+                    <tr>
+                        <td>LookBook</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="column">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Shopify App Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>$180.00</td>
+                    </tr>
+                    <tr class="highlighted">
+                        <td>$120.00</td>
+                    </tr>
+                    <tr>
+                        <td>$240.00</td>
+                    </tr>
+                    <tr class="highlighted">
+                        <td>$60.00</td>
+                    </tr>
+                    <tr>
+                        <td>$144.00</td>
+                    </tr>
+                    <tr class="highlighted">
+                        <td>$84.00</td>
+                    </tr>
+                    <tr>
+                        <td>$78.00</td>
+                    </tr>
+                    <tr class="highlighted">
+                        <td>$155.00</td>
+                    </tr>
+                    <tr>
+                        <td>$69.00</td>
+                    </tr>
+                    <tr class="highlighted">    
+                        <td>$96.00</td>
+                    </tr>
+                    <tr>
+                        <td>$290.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="column">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Our Theme</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tick-icon">FREE</td>
+                    </tr>
+                    <tr class="highlighted">
+                        <td class="tick-icon">FREE</td>
+                    </tr>
+                    <tr>
+                        <td class="tick-icon">FREE</td>
+                    </tr>
+                    <tr class="highlighted">
+                        <td class="tick-icon">FREE</td>
+                    </tr>
+                    <tr>
+                        <td class="tick-icon">FREE</td>
+                    </tr>
+                    <tr class="highlighted">
+                        <td class="tick-icon">FREE</td>
+                    </tr>
+                    <tr>
+                        <td class="tick-icon">FREE</td>
+                    </tr>
+                    <tr class="highlighted">
+                        <td class="tick-icon">FREE</td>
+                    </tr>
+                    <tr>
+                        <td class="tick-icon">FREE</td>
+                    </tr>
+                    <tr class="highlighted">    
+                        <td class="tick-icon">FREE</td>
+                    </tr>
+                    <tr>
+                        <td class="tick-icon">FREE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+        <div class="table-list-1">
+            <div class="column">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>
+                                <span class="price-highlight">
+                                    <br><br> Plus $1,516.00 
+                                    <br>per year 
+                                    <br><br>
+                                </span>
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="column">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>
+                                <div class="rectangle">
+                                <span style="color: white; font-weight: bold; text-decoration: underline; font-size: 18px;">
+                                    <br>Only $89* 
+                                    <br>No Monthly Fee
+                                    <br><br>
+                            </span>
+                                </div>
+                        </td>
+                    </tr>
+                    </thead>
+                </table>
+            </div>             
+        </div>
+
+        <script>
+            document.querySelector('.rectangle').addEventListener('mouseenter', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+    
+                this.style.setProperty('--circle-x', `${x}px`);
+                this.style.setProperty('--circle-y', `${y}px`);
+    
+                this.classList.add('hover');
+            });
+    
+            document.querySelector('.rectangle').addEventListener('mouseleave', function() {
+                this.classList.remove('hover');
+            });
+        </script>
+            
+
+        
+        <div class="top-2">
+            <h1>Especially, Ella is Mobile First Design</h1>
+        </div>
+
+
+         
+        <div class="container">
+            <div class="half-left">
+                <div class="themevale_unique_features">
+                    <div class="item active" data-feature="mobile-menu">
+                        <h2 class="title">Mobile Menu</h2>
+                        <p class="description">The best menu layouts which are optimized well for Mobile, prevents your customers from feeling overwhelmed by a multitude of menu items from the traditional way.</p>
+                    </div>
+                    <div class="item" data-feature="bundle-discount">
+                        <h2 class="title">Bundle Discount</h2>
+                        <p class="description">Upsell/Cross-Sell feature which helps your store provide maximum value to customers instead of limiting them to already-encountered products.</p>
+                    </div>
+                    <div class="item" data-feature="quick-shop">
+                        <h2 class="title">Quick Shop</h2>
+                        <p class="description">Provide the buyers a powerful and simple tool to go shopping easily right on the homepage/category page... without making them think a lot about how or where to buy an item.</p>
+                    </div>
+                    <div class="item" data-feature="quick-edit-cart">
+                        <h2 class="title">Quick Edit Cart/Quick Update Cart</h2>
+                        <p class="description">A great solution allows the buyers to change products directly in the side cart, simplifying the complicated process of switching to the cart page to change the other variants.</p>
+                    </div>
+                    <div class="item" data-feature="before-you-leave">
+                        <h2 class="title">Before You Leave Popup</h2>
+                        <p class="description">Provide a powerful and simple way to convert more visitors to buyers who intend to leave your website after a certain time.</p>
+                    </div>
+                    <div class="item" data-feature="multitasking-function">
+                        <h2 class="title">Multitasking Function</h2>
+                        <p class="description">An awesome Call-to-Action feature to look after the customer shopping experience by allowing them to see the recently viewed products right on a popup.</p>
+                    </div>
+                    <div class="item" data-feature="product-filter">
+                        <h2 class="title">Product Filter</h2>
+                        <p class="description">Supports both Dynamic Filter and Filter by Tags which help your customers find the exact product within seconds by showing the right result based on their selections.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="half-right">
+                <div class="images-container">
+                    <img src="assets/images/MOBILE-MENU.gif" alt="Mobile Menu Preview" data-feature="mobile-menu" class="active">
+                    <img src="assets/images/BUNDLE.gif" alt="Bundle Discount Preview" data-feature="bundle-discount">
+                    <img src="assets/images/QUICK-SHOP.gif" alt="Quick Shop Preview" data-feature="quick-shop">
+                    <img src="assets/images/QUICK-EDIT-CART.gif" alt="Quick Edit Cart Preview" data-feature="quick-edit-cart">
+                    <img src="assets/images/BEFORE-YOU-LEAVE.gif" alt="Before You Leave Popup Preview" data-feature="before-you-leave">
+                    <img src="assets/images/MULTI-FUNCTION.gif" alt="Multitasking Function Preview" data-feature="multitasking-function">
+                    <img src="assets/images/PRODUCT-FILTER.gif" alt="Product Filter Preview" data-feature="product-filter">
+                </div>
+            </div>
+        
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.images-container').slick({
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    dots: false,
+                    arrows: true,
+                });
+        
+                $('.themevale_unique_features .item').on('click', function() {
+                    var feature = $(this).data('feature');
+                    $('.themevale_unique_features .item').removeClass('active');
+                    $(this).addClass('active');
+                    $('.images-container img').removeClass('active');
+                    $('.images-container img[data-feature="' + feature + '"]').addClass('active');
+                });
+            });
+        </script>
+        </div>
+        
+        <div class="container1">
+            <div class="performance">
+                <div class="grade">
+                    <h1>A</h1>
+                </div>
+                <div class="stats">
+                    <p>Performance <span>99%</span></p>
+                    <p>Structure <span>96%</span></p>
+                </div>
+            </div>
+            <div class="optimal-performance">
+                <h2>Grete Performance</h2>
+                <p>Optimal performance</p>
+                <p>Ensure a smooth and efficient journey for your visitors, enhancing their overall experience on your Shopify store.</p>
+            </div>
+            <div class="revenue-growth">
+                <h2>Potential Revenue Growth</h2>
+                <p>Stronger together with our best marketing tools. You will know how finance and marketing should collaborate to maximize profitability demand.</p>
+            </div>
+            <div class="total-sales">
+                <h2>Total Sales: <span>$28,171</span></h2>
+                <p>+139.35%</p>
+                <img src="" alt="Sales Chart">
+            </div>
+        </div>
+
+        <div class="container2">
+            <div class="search-section">
+                <div class="search-bar">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Google Logo" class="google-logo">
+                    <div class="search-input">
+                        <input type="text" value="When customers search for a product" readonly>
+                        <button><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg" alt="Search Icon"></button>
+                    </div>
+                </div>
+                <div class="search-results">
+                    <div class="shopify-result">
+                        <p>Your Shopify Store</p>
+                    </div>
+                    <div class="other-results">
+                        <div class="result"></div>
+                        <div class="result"></div>
+                        <div class="result"></div>
+                        <div class="result"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="seo-content">
+                <h2>Powerful SEO With Ella</h2>
+                <p><strong>Online Store 2.0</strong></p>
+                <p>Doing SEO for your website will help you rank higher in the search engine rankings (SERP) so it will have a chance to show up before people are interested and thereby have a chance to turn them into customers yourself.</p>
+            </div>
+        </div>
+
+        <div class="top-2">
+            <h1>Less Code - More Flexibility</h1>
+            <p>With the online store 2.0 (OS 2.0) platform that allows you to add sections anywhere on every page. Header and footer customizations without code, we're unlocking the ability to add, remove, hide, and reorder sections and app blocks within the header and footer area via the theme editor.</p>
+        </div>
+
+        <div class="main-preview">
+            <div class="preview-image">
+                <img src="assets/images/macbook-customization.jpg" alt="Shopify Preview">
+                <div class="settings">
+                    <img src="assets/images/customization-1.png" alt="Settings Screenshot 4">
+                    <img src="assets/images/customization-2.jpg" alt="Settings Screenshot 1">
+                    <img src="assets/images/customization-3.jpg" alt="Settings Screenshot 2">
+                    <img src="assets/images/customization-4.jpg" alt="Settings Screenshot 3">
+                </div>
+            </div>
+        </div>
+        
+        
+
+        
+            <div class="container-4">
+                <h1>What our Clients say</h1>
+                <p>See what our customers say about us. It really matters for us, how good or bad we will make it for evaluation to make Ella better.</p>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="review-box">
+                            <h3>G4mbI3</h3>
+
+                            <p class="category">for Customer Service</p>
+                            <p class="stars">★★★★★</p>
+                            <p class="review-text">I already loved the template but a couple of days ag I wanted to update and make a few customizations and also needed a few tweaks from support, they solved everything and dd a great work customizing as asked.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-box">
+                            <h3>liya1995</h3>
+                            
+                            <p class="category">for Customer Service</p>
+                            <p class="stars">★★★★★</p>
+                            <p class="review-text">The template function is very complete, I can use the template inside to meet a lot of needs. Similar to the header fixed at the top, back to the top function. And there are 6 types for header and footer styles in a template. It is worth mentioning that when I need help, the service team will always solve it for me as soon as possible, and they are very patient to tell me how to modify it. I am very honored to receive 12 sets of template services at this price.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-box">
+                            <h3>DigitalFirstMind</h3>
+                            
+                            <p class="category">for Customer Service</p>
+                            <p class="stars">★★★★★</p>
+                            <p class="review-text">I already bought Ella for another project and decided to buy again for our store. It was not an easy choice as I had to decide also between this and another theme which is highly rated on Themeforest. I bought both but in the end, I used Ella. Its MegaMenu is just amazing and the documentation on the theme features is just perfect. It's a complete theme but can be also quite complex if you want to use "all" of its features. Still, everything is well documented and step by step you can achieve what you need for sure. Last, I had some issues I needed to clear and the support was professional, addressed my concerns and gave me the solutions. I had some issues I needed to clear and the support was professional, addressed my concerns and gave me the solutions.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-box">
+                            <h3>Underhance</h3>
+                            <p class="category">for Customer Service</p>
+                            <p class="stars">★★★★★</p>
+                            <p class="review-text">Not only Ella is one of the most comprehensive and well thought themes I've ever seen, but the team (both customer service and technical) work efficiently, quickly and go beyond to help you. There is no doubt that I would use them for future projects and and I would recommend them without hesitation. </p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review-box">
+                            <h3>purplexedqt</h3>
+                            
+                            <p class="category">for Customer Service</p>
+                            <p class="stars">★★★★★</p>
+                            <p class="review-text">I already loved the template but a couple of days ag I wanted to update and make a few customizations and also needed a few tweaks from support, they solved everything and dd a great work customizing as asked.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+            </div>
+
+            <script>
+            $(document).ready(function(){
+                $('.swiper-wrapper').slick({
+                    slidesToShow: 4, // Show 4 slides per row
+                    slidesToScroll: 1, // Scroll 1 slide at a time
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    dots: true,
+                    arrows: true,
+                    prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+                    nextArrow: '<button type="button" class="slick-next">Next</button>',
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 1,
+                                infinite: true,
+                                dots: true
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                    ]
+                });
+            });
+        </script>
+            
+            
+
+        <div class="container-5">
+            <h1>Most Compatible Apps</h1>
+            <p>Our Ella theme is compatible with almost all Shopify Apps *</p>
+            <div class="app-grid">
+                <div class="app-card">
+                    <img src="assets/images/growave.png" alt="Growave">
+                    <div class="app-info">
+                        <h2>Growave - Loyalty, Product Reviews, Wishlist</h2>
+                        <p>by <a href="#">Growave</a></p>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/images/loox.png" alt="Loox">
+                    <div class="app-info">
+                        <h2>Loox Product Reviews & Photos</h2>
+                        <p>by <a href="#">Loox</a></p>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/images/searchpie.png" alt="SearchPie">
+                    <div class="app-info">
+                        <h2>SearchPie: SEO Booster & Speed</h2>
+                        <p>by <a href="#">Secomapp</a></p>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/images/joy.png" alt="Joy">
+                    <div class="app-info">
+                        <h2>Joy: Loyalty & Rewards Program</h2>
+                        <p>by <a href="#">Joy Loyalty</a></p>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/images/ava.png" alt="AVA">
+                    <div class="app-info">
+                        <h2>AVA Email Marketing, SMS, Popups</h2>
+                        <p>by <a href="#">AVADA</a></p>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <img src="assets/images/uppromote.png" alt="UpPromote">
+                    <div class="app-info">
+                        <h2>UpPromote Affiliate & Referral</h2>
+                        <p>by <a href="#">Secomapp</a></p>
+                    </div>
+                </div>
+            </div>
+            <script>
+            $(document).ready(function(){
+                if ($(window).width() <= 500) {
+                    $('.app-grid').slick({
+                        slidesToShow: 1, // Show one slide at a time
+                        slidesToScroll: 1,
+                        autoplay: true,
+                        autoplaySpeed: 2000,
+                        dots: true, // Show navigation dots
+                        infinite: true, // Loop through slides
+                        arrows: false // Hide navigation arrows
+                    });
+                }
+            });
+        </script>
+            
+        </div>
+
+
+        <div class="container-7">
+               
+            <div class="themevale_heading">
+                <img src="assets/images/ella-before-end.png">
+                <h2 class="title">What are you waiting for?</h2>
+                <a class="button button-purchase" href="https://1.envato.market/dokaB2" target="_blank">
+                    <div class="purchase-icon">
+                    </div>
+                    <span class="text">Buy Theme</span>
+                </a>
+            </div>
+               
+    
+            <div class="full-images">
+                <div class="images-container-1" id="imageContainer">
+                    <img src="assets/images/ella-purchase.jpg" alt="Ella Car Home - Purchase Now" class="purchase-home" id="image1">
+                    <img src="assets/images/purchase-icons.png" alt="Ella Car Home - Purchase Now" class="purchase-icons" id="image2">
+                </div>
+            </div>
+            <script>
+                const container = document.getElementById('imageContainer');
+                const image1 = document.getElementById('image1');
+                const image2 = document.getElementById('image2');
+        
+                container.addEventListener('mousemove', (e) => {
+                    const rect = container.getBoundingClientRect();
+                    const x = e.clientX - rect.left; // x position within the element.
+                    const y = e.clientY - rect.top;  // y position within the element.
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+        
+                    const rotateX = (centerY - y) / 20; // Rotation around X-axis
+                    const rotateY = (x - centerX) / 20; // Rotation around Y-axis
+        
+                    image1.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                    image2.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(100px)`;
+                });
+        
+                container.addEventListener('mouseleave', () => {
+                    image1.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                    image2.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(100px)';
+                });
+            </script>
+            </div>
+    
+            
+    
+            <div class="themevale_navigation">
+                <div class="items text-left">
+                    <div class="copyright">© 2024 <a class="link link-underline" href="https://halothemes.net/" target="_blank">Halothemes.net</a></div>
+                </div>
+                <div class="items items-center text-center">
+                    <ul class="clearfix">
+                        <li class="item">
+                            <a class="link link-underline" href="https://halothemes.net/collections/shopify-themes" target="_blank">Shopify Themes & Templates</a>
+                        </li>
+                        <li class="item">
+                            <a class="link link-underline" href="https://halothemes.net/pages/referral-program">Exclusive Offer</a>
+                        </li>
+                        <li class="item">
+                            <a class="link link-underline" href="https://halothemes.net/collections/bigcommerce-themes" target="_blank">BigCommerce Themes</a>
+                        </li>
+                        <li class="item">
+                            <a class="link link-underline" href="https://halothemes.net/collections/bigcommerce-add-ons" target="_blank">BigCommerce Addons</a>
+                        </li>
+                        <li class="item">
+                            <a class="link link-underline" href="https://halothemes.net/pages/themes-development" target="_blank">Custom Theme Development</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="items text-right">
+                    <a class="link link-underline" href="https://halosoft.ticksy.com/" target="_blank">Contact Us</a>
+                </div>
+            </div>
+</div>
+</div>
+</div>
+</main>
+<footer>
+    <div class="warning-container">
+        <div class="warning-icon">⚠️</div>
+        <p>Images used and included in this theme are for demo purpose only. They are not a part of the theme and NOT included in the final purchase files.</p>
+        <p class="commercial-warning">COMMERCIAL USAGE IS NOT ALLOWED AND IS AT YOUR OWN RISK.</p>
+    </div>
+    
+</footer>
+</body>
+</html>
