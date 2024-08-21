@@ -620,7 +620,7 @@ p {
     border-radius: 50%; /* Đảm bảo biểu tượng là hình tròn */
     padding: 4px; /* Khoảng cách giữa viền và biểu tượng */
     margin-right: 4px; /* Khoảng cách giữa biểu tượng và văn bản */
-    font-size: 15px; /* Kích thước của biểu tượng */
+    font-size: 10px; /* Kích thước của biểu tượng */
 }
 
 .table-list-1 {
@@ -2158,6 +2158,8 @@ p {
         padding: 5% 3%; /* Điều chỉnh padding */
         overflow-y: auto; /* Thêm cuộn dọc nếu nội dung vượt quá */
     }
+
+    
 
     .preview__header {
         z-index: 1000;
