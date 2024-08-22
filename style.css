@@ -2131,6 +2131,12 @@ p {
         width: 24px;
     }
 
+    .banner-2 {
+        width: 100%;
+        height: 3vw;
+        margin-top: -35%;
+    }
+
     .icon-line {
         height: 2px;
         background: #000;
@@ -2577,6 +2583,11 @@ html, body {
     font-size: 3px;
 }
 
+.navbar-menu li a {
+    margin-left: -10vw;
+    font-size: 3vw;
+}
+
 
 .navbar-right {
     gap: 0
@@ -2756,7 +2767,11 @@ button img {
     margin-bottom: 20%
 }
 
-
+.banner-2 {
+    width: 100%;
+    height: 3vw;
+    margin-top: -20%;
+}
 .themevale_heading{
     margin-top: 30%;
 }
@@ -2847,6 +2862,11 @@ button img {
     
     .tick-icon::before{
         font-size: 3px;
+    }
+
+    .navbar-menu li a {
+        margin-left: -10vw;
+        font-size: 3vw;
     }
 
 
@@ -2966,6 +2986,7 @@ button img {
     .banner-2 {
         width: 100%;
         height: 3vw;
+        margin-top: -20%;
     }
 
     .offer-text { font-size: 0.5rem; }
@@ -3240,10 +3261,6 @@ button img {
         font-size: 16px;
     }
 
-    .banner-2 {
-        width: 100%;
-        height: 3vw;
-    }
 
     .offer-text { font-size: 0.5rem; }
 
@@ -3431,6 +3448,21 @@ button img {
 
     .tick-icon::before{
         font-size: 1px;
+    }
+
+    .navbar-menu {
+        width: 70%;
+    }
+
+    .navbar-menu li a {
+        margin-left: -15vw;
+        font-size: 3vw;
+    }
+
+    .banner-2 {
+        width: 100%;
+        height: 3vw;
+        margin-top: 40%;
     }
 
 }
