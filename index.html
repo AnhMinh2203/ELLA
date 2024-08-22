@@ -115,19 +115,22 @@
     
 
     <script>
-        document.querySelector('.icon-nav').addEventListener('click', function() {
-    document.querySelector('.navbar-menu').classList.toggle('active');
-    document.querySelector('.overlay').classList.toggle('active');
-    document.body.classList.toggle('overlay-active'); // Ngăn cuộn trang
+        document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.icon-nav').addEventListener('click', function() {
+        document.querySelector('.navbar-menu').classList.toggle('active');
+        document.querySelector('.overlay').classList.toggle('active');
+        document.body.classList.toggle('overlay-active');
+    });
+
+    document.querySelector('.overlay').addEventListener('click', function(e) {
+        if (e.target === this || e.target.classList.contains('close-menu')) {
+            document.querySelector('.navbar-menu').classList.remove('active');
+            document.querySelector('.overlay').classList.remove('active');
+            document.body.classList.remove('overlay-active');
+        }
+    });
 });
 
-document.querySelector('.overlay').addEventListener('click', function(e) {
-    if (e.target === this || e.target.classList.contains('close-menu')) {
-        document.querySelector('.navbar-menu').classList.remove('active');
-        document.querySelector('.overlay').classList.remove('active');
-        document.body.classList.remove('overlay-active'); // Cho phép cuộn lại trang
-    }
-});
 
     </script>
 
