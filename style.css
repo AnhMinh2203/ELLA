@@ -619,8 +619,8 @@ p {
     background-color: rgb(105, 233, 105); /* Màu nền của biểu tượng (xanh) */
     border-radius: 50%; /* Đảm bảo biểu tượng là hình tròn */
     padding: 4px; /* Khoảng cách giữa viền và biểu tượng */
-    margin-right: 4px; /* Khoảng cách giữa biểu tượng và văn bản */
-    font-size: 10px; /* Kích thước của biểu tượng */
+    margin-right: 10px;
+    font-size: 10px;
 }
 
 .table-list-1 {
@@ -832,6 +832,9 @@ p {
 .total-sales img {
     max-width: 100%;
     border-radius: 0.625rem; /* Bo tròn góc sử dụng rem */
+}
+.fa-arrow-up-from-bracket:before {
+    margin-top: 8%;
 }
 
 .container2 {
@@ -2128,10 +2131,6 @@ p {
         width: 24px;
     }
 
-    .tick-icon::before { 
-        font-size: 0.2vw; 
-    }
-    
     .icon-line {
         height: 2px;
         background: #000;
@@ -2159,7 +2158,9 @@ p {
         overflow-y: auto; /* Thêm cuộn dọc nếu nội dung vượt quá */
     }
 
-    
+    .tick-icon::before{
+        font-size: 8px;
+    }
 
     .preview__header {
         z-index: 1000;
@@ -2245,8 +2246,9 @@ p {
 
 
     .slide-2{
-        gap: 1%;
-        width: 120%;
+        gap: 0.005vw;
+        width: 130%;
+        margin-left: -15px;
     }
 
     .achievement-item{
@@ -2490,7 +2492,7 @@ p {
     }
 
     .column th{
-        font-size: 14px;
+        font-size: 12px;
     }
 
 
@@ -2543,6 +2545,18 @@ p {
     .warning-container p {
         font-size: 0.5rem;
     }
+
+    .product-bottom p{
+        font-size: 16px;
+    }
+
+    .product-bottom h3{
+        font-size: 18px;
+    }
+
+    .fa-arrow-up-from-bracket:before {
+        margin-top: 4%;
+    }
 }
 
 @media (max-width: 600px) {
@@ -2558,6 +2572,11 @@ html, body {
         margin-right: -15em;
         z-index: 1;
 }
+
+.tick-icon::before{
+    font-size: 3px;
+}
+
 
 .navbar-right {
     gap: 0
@@ -2801,9 +2820,7 @@ button img {
     font-size: 0.5rem;
 }
 
-.tick-icon::before { 
-    font-size: 0.2vw; 
-}
+
 }
 
 @media (max-width: 500px) {
@@ -2828,6 +2845,10 @@ button img {
         z-index: 1;
     }
     
+    .tick-icon::before{
+        font-size: 3px;
+    }
+
 
     .image-2 {
         width: 160px;
@@ -3073,10 +3094,18 @@ button img {
         font-size: 0.9rem;
     }
 
-    .tick-icon::before { 
-        font-size: 0.2vw; 
-    }
     
+    .product-bottom p{
+        font-size: 12px;
+    }
+
+    .product-bottom h3{
+        font-size: 14px;
+    }
+
+    .fa-arrow-up-from-bracket:before {
+        margin-top: 10%;
+    }
 
 }
 @media (max-width: 321px) {
@@ -3387,5 +3416,21 @@ button img {
         z-index: 1;
     }
 
-    .tick-icon::before { font-size: 0.2vw; }
+
+    .product-bottom p{
+        font-size: 18px;
+    }
+
+    .product-bottom h3{
+        font-size: 20px;
+    }
+
+    .fa-arrow-up-from-bracket:before {
+        margin-top: 10px;
+    }
+
+    .tick-icon::before{
+        font-size: 1px;
+    }
+
 }
