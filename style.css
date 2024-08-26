@@ -3428,7 +3428,7 @@ button img {
         font-family: sans-serif;
     }
 
-    .column th { font-size: 8px; }
+    .column th { font-size: 7px; }
 
     .products li { flex-basis: calc(50% - 15px); }
 
