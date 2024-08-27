@@ -1320,6 +1320,7 @@ p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative; /* Đảm bảo các phần tử con có thể được định vị tương đối tới .main-preview */
     margin-top: 25%;
+    left:-100px;
 }
 
 .preview-image {
