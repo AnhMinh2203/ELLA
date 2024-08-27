@@ -629,7 +629,7 @@ p {
     border-radius: 50%; /* Đảm bảo biểu tượng là hình tròn */
     padding: 4px; /* Khoảng cách giữa viền và biểu tượng */
     margin-right: 10px;
-    font-size: 10px;
+    font-size: 8px;
 }
 
 .table-list-1 {
@@ -2176,7 +2176,7 @@ p {
     }
 
     .tick-icon::before{
-        font-size: 8px;
+        font-size: 6px;
     }
 
     .preview__header {
