@@ -197,6 +197,15 @@
     <span class="arrow">--→</span>
     <span class="close-btn" id="close-btn">✕</span>
 </div>
+<script>
+document.getElementById('close-btn').addEventListener('click', function() {
+    const banner = document.getElementById('banner');
+    banner.classList.add('hidden');
+
+    // Optionally, you can completely remove the banner from the DOM after the transition
+    setTimeout(() => banner.remove(), 500); // 500ms to match the transition duration
+});
+</script>
 
 <div class="banner-parallax-layer triangle">
     <img class="banner-parallax-image" src="assets/images/parallax-triangle.png" alt="Parallax Triangle">
