@@ -45,73 +45,6 @@ let currentIndex = 0;
 const images = document.querySelectorAll('.images-container img');
 const totalImages = images.length;
 
-function showImage(index) {
-    images.forEach((img, i) => {
-        img.classList.remove('active');
-        if (i === index) {
-            img.classList.add('active');
-        }
-    });
-}
-
-function nextImage() {
-    currentIndex = (currentIndex + 1) % totalImages;
-    showImage(currentIndex);
-}
-
-function previousImage() {
-    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-    showImage(currentIndex);
-}
-
-document.querySelector('.arrow.left').addEventListener('click', previousImage);
-document.querySelector('.arrow.right').addEventListener('click', nextImage);
-
-showImage(currentIndex);
-
-setInterval(nextImage, 3000);
-
-
-/// JavaScript for sliding functionality
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
-const slide = document.querySelector('.testimonial-slide');
-const dots = document.querySelectorAll('.dot');
-
-let index = 0;
-
-nextButton.addEventListener('click', () => {
-    index = (index + 1) % 3; // 3 is the number of testimonials
-    updateSlidePosition();
-    updateDots();
-});
-
-prevButton.addEventListener('click', () => {
-    index = (index - 1 + 3) % 3; // 3 is the number of testimonials
-    updateSlidePosition();
-    updateDots();
-});
-
-dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-        index = i;
-        updateSlidePosition();
-        updateDots();
-    });
-});
-
-function updateSlidePosition() {
-    slide.style.transform = `translateX(${-index * 100}%)`;
-}
-
-function updateDots() {
-    dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-    });
-}
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const items = document.querySelectorAll('.themevale_unique_features .item');
 
@@ -172,6 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
         element.addEventListener('mouseleave', () => resetTransform(element));
     });
 });
+
+
+
+
 
 
 

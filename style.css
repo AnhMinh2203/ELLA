@@ -13,7 +13,8 @@ html, body {
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2%;
+    column-gap: 2%;
+    row-gap: 6%;
     padding: 5% 10%;
     background-color: white;
 }
@@ -28,24 +29,43 @@ html, body {
 }
 
 .slide-item {
-    border-radius: 10px; /* Slightly larger border-radius */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Increased shadow for more depth */
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     background-color: white;
     color: black;
-    height: 350px; /* Further increase in height */
-    padding: 30px; /* More padding for spacing */
+    height: 250px;
+    padding: 10px 20px;
+    margin: 0;
 }
 
-h3 {
+@keyframes slideIn {
+    0% {
+      opacity: 0; /* Ẩn ban đầu */
+      transform: translateX(-100%); /* Đẩy phần tử ra khỏi màn hình phía trái */
+    }
+    100% {
+      opacity: 1; /* Hiển thị phần tử */
+      transform: translateX(0); /* Di chuyển phần tử về vị trí gốc */
+    }
+  }
+  
+  .slide-item {
+    opacity: 0; /* Ẩn ban đầu */
+    transform: translateX(-100%); /* Đẩy phần tử ra khỏi màn hình phía trái */
+    animation: slideIn 1.5s ease-out forwards; /* Áp dụng animation khi trang tải */
+  }
+  
+
+.slide-item h3 {
     text-align: center;
-    font-size: 22px; /* Increased font size */
+    font-size: 20px; /* Increased font size */
     font-family: sans-serif;
     margin-top: 15px; /* Adjusted margin */
 }
 
-p {
+.slide-item p {
     text-align: center;
-    font-size: 18px; /* Increased font size */
+    font-size: 16px; /* Increased font size */
     font-family: sans-serif;
     margin-top: 20px; /* Adjusted margin */
 }
@@ -83,31 +103,43 @@ p {
     text-align: center;
 }
 
+:root {
+    --font-weight-bold: 700;
+}
+
 /* Heading style */
 .achievement-1 h1 {
     color: orangered;
-    font-size: 4vw; /* Font size relative to viewport width */
-    margin-bottom: 2%; /* Margin below heading */
+    font-size: 48px;
+    margin-bottom: 2%;
+    font-weight: var(--font-weight-bold);
 }
 
 /* Description style */
 .achievement-1 p {
     color: gray;
-    font-size: 2.5vw; /* Font size relative to viewport width */
+    font-size: 16px; /* Font size relative to viewport width */
     margin-bottom: 4%; /* Margin below description */
 }
 
 /* Container for achievement items */
 .achievement-2 {
-    padding: 2%; /* Padding around the container */
-}
+    padding: 2%; /* Padding xung quanh container */
+    margin-top: -5%;
+    opacity: 0; /* Ẩn ban đầu */
+    transform: translateY(100%); /* Đẩy phần tử ra khỏi màn hình phía dưới */
+    animation: slideInUp 1.5s ease-out forwards; /* Áp dụng animation khi trang tải */
+  }
+
+  .achievement-2.animate {
+    animation: slideInUp 1.5s ease-out forwards; /* Áp dụng animation khi lớp .animate được thêm vào */
+  }
 
 /* Slide container with grid layout */
 .slide-2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-    gap: 2%; /* Gap between items */
-    padding: 0 5%; /* Padding on left and right to add spacing around the grid */
+    padding: 10px 20px;
     box-sizing: border-box; /* Include padding in element's width */
 }
 
@@ -127,15 +159,15 @@ p {
 .button-1 {
     color: red;
     background-color: white;
-    font-size: 4vw; /* Font size relative to viewport width */
-    width: 12vw; /* Width of circular button relative to viewport width */
-    height: 12vw; /* Height of circular button relative to viewport width */
-    border-radius: 50%; /* Circular shape */
+    font-size: 48px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid orangered; /* Border color and size */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+    border: 2px solid orangered;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .button-1:hover {
@@ -154,24 +186,27 @@ p {
 }
 
 .content-wrapper-1 p {
-    font-size: 2vw; /* Font size relative to viewport width */
+    font-size: 16px; /* Font size relative to viewport width */
     color: gray;
     margin-bottom: 1%; /* Space below the description */
+    text-align: left;
 }
 
 .content-wrapper-1 h1 {
-    font-size: 3.5vw; /* Font size relative to viewport width */
+    font-size: 48px; /* Font size relative to viewport width */
     color: black;
     margin: 0; /* Remove default margin */
 }
 
 
-
 .achievement-3 {
     display: flex;
-    margin-top: 5%;
-    padding: 0 5%;
+    margin-left: 5%;
+    margin-right: 5%;
     object-fit: cover;
+    opacity: 0; /* Ẩn ban đầu */
+    transform: translateY(100%); /* Đẩy phần tử ra khỏi màn hình phía dưới */
+    animation: slideInUp 1.5s ease-out forwards; /* Áp dụng animation khi trang tải */
 }
 
 .left, .right {
@@ -182,6 +217,8 @@ p {
 .left img, .right img {
     max-width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto; /* Căn giữa hình ảnh bên trong phần tử con */
 }
 
 /* Section styling */
@@ -199,61 +236,62 @@ p {
     text-align: center;
 }
 
-/* Top section styling */
 .achievement-4 .top {
     display: flex;
-    align-items: center;
-    gap: 1%; /* Gap between items */
-    margin-top: 20%;
-}
-
-.top h1{
-    color: orangered;
-    font-size: 2vw; /* Font size relative to viewport width */
-    margin-bottom: 2%; /* Margin below heading */
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+    align-items: center; /* Căn giữa các phần tử theo chiều ngang */
+    margin-top: 20%; /* Điều chỉnh khoảng cách trên */
 }
 
 /* Heading style in .achievement-4 */
 .achievement-4 h2 {
-    font-size: 5vw; /* Font size relative to viewport width */
-    font-weight: bold;
-    color: orangered;
     position: relative;
     display: inline-block;
+    font-size: 48px; /* Điều chỉnh kích thước chữ */
+    font-weight: bold;
+    color: orangered;
 }
-
 
 /* Pseudo-element for additional styling */
 .achievement-4 h2::after {
     content: '+';
-    font-size: 2.5vw; /* Font size relative to viewport width */
+    font-size: 20px;
     position: absolute;
     top: 0;
-    right: -2%; /* Position relative to the heading */
+    right: -15%; /* Điều chỉnh vị trí của dấu '+' */
     color: orangered;
 }
+
+.achievement-4 h1 {
+    color: orangered;
+    font-size: 48px; /* Kích thước chữ cho "Home Pages" */
+    font-weight: bold;
+    margin-top: 1rem; /* Khoảng cách phía trên giữa "50+" và "Home Pages" */
+    padding: 0;
+    font-weight: var(--font-weight-bold);
+}
+
+
 
 /* Bottom section styling */
 /* Bottom section styling */
 .achievement-4 .bot {
     margin-top: 1%; /* Margin above content */
     margin-bottom: 15%;
-    font-size: 4vw; /* Increased font size relative to viewport width */
-    color: #333;
+    color: gray;
     text-align: center; /* Center-align text horizontally */
     width: 100%; /* Ensure the text container takes full width */
     display: flex;
     justify-content: center; /* Center-align content horizontally */
     align-items: center; /* Center-align content vertically */
-    padding: 0 5%; /* Add padding to create space on both sides */
     box-sizing: border-box; /* Include padding in the element's width */
 }
 
 /* Paragraph styling */
 .achievement-4 .bot p {
-    margin: 0; /* Remove default margin */
-    line-height: 1.5; /* Improve readability */
-    font-size: 25px;
+    font-size: 16px;
+    margin-left: 30%;
+    margin-right: 30%;
 }
 
 .list-list {
@@ -263,9 +301,9 @@ p {
     display: flex;
     padding: 0px 20px;
     border-radius: 15px; /* Bo tròn góc của container */
-    height: 70px; /* Đặt chiều cao cố định */
-    margin-top: 10%;
+    margin-top: 5%;
 }
+
 
 .list{
     width: 100%;
@@ -276,8 +314,8 @@ p {
     padding: 0; /* Xóa padding mặc định */
     display: flex; /* Sử dụng flexbox để căn chỉnh các mục */
     flex-wrap: wrap; /* Cho phép các mục chồng lên nhau khi không đủ không gian */
-    gap: 3.8%; /* Khoảng cách giữa các mục */
-    margin-top: 1.2%;
+    gap: 4%; /* Khoảng cách giữa các mục */
+    justify-content: center;
 }
 
 .list ul li {
@@ -288,7 +326,7 @@ p {
     text-decoration: none; /* Xóa gạch chân */
 }
 
-.list ul li p {
+.list ul li p, .list ul li:first-child p {
     margin: 0; /* Xóa margin mặc định */
     padding: 0px 20px; /* Khoảng cách giữa nội dung và viền của mỗi mục */
     border-radius: 5px; /* Bo tròn các góc của mỗi mục */
@@ -302,20 +340,25 @@ p {
 .list ul li a p {
     color: black; /* Default text color */
     text-decoration: none; /* Remove underline */
-    font-size: 0.8vw;
+    font-size: 16px;
 }
 
 
 .list ul li:first-child p {
     color: red; /* Đổi màu chữ thành đỏ cho mục đầu tiên */
-    padding: 0; /* Xóa padding cho mục đầu tiên khi không hover */
 
 }
 
 .list ul li p:hover {
     color: black; /* Đổi màu chữ thành đen */
     background-color: white; /* Đổi màu nền thành trắng */
-    padding: 15px 25px; /* Thay đổi padding khi hover */
+    border-radius: 15px; /* Bo tròn các góc của mỗi mục */
+}
+
+.list ul li:first-child p:hover {
+    color: black; /* Đổi màu chữ thành đen */
+    background-color: white; /* Đổi màu nền thành trắng */
+    border-radius: 15px; /* Bo tròn các góc của mỗi mục */
 }
 
 
@@ -328,8 +371,8 @@ p {
 }
 
 .wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .products {
@@ -371,6 +414,8 @@ p {
     display: flex;
     justify-content: flex-start;
     margin-left: 20px;
+    font-size: 16px;
+    margin-top: 7%;
 }
 
 .product-bottom h3{
@@ -378,6 +423,8 @@ p {
     justify-content: flex-start;
     color : black;
     margin-left: 20px;
+    font-size: 20px;
+    margin-top: 7%;
 }
 
 .product-bottom i {
@@ -394,6 +441,7 @@ p {
     color: orangered; /* Thay đổi màu khi trỏ vào */
     cursor: pointer;
 }
+
 
 .product-item{
     display: block;
@@ -426,6 +474,7 @@ p {
 .product-top-1{
     position: relative;
     overflow: hidden; /* Ẩn các nội dung vượt ra khỏi khu vực chứa */
+    height: 470px;
 }
 
 .new-button {
@@ -447,7 +496,6 @@ p {
     display: flex;
     padding: 0px 20px;
     border-radius: 15px; /* Bo tròn góc của container */
-    height: 55px; /* Đặt chiều cao cố định */
     margin-top: 5%;
 }
 
@@ -460,8 +508,8 @@ p {
     padding: 0; /* Xóa padding mặc định */
     display: flex; /* Sử dụng flexbox để căn chỉnh các mục */
     flex-wrap: wrap; /* Cho phép các mục chồng lên nhau khi không đủ không gian */
-    gap: 2%; /* Khoảng cách giữa các mục */
-    margin-top: 1.2%;
+    gap: 4%; /* Khoảng cách giữa các mục */
+    justify-content: center;
 }
 
 .list-1 ul li {
@@ -472,7 +520,7 @@ p {
     text-decoration: none; /* Xóa gạch chân */
 }
 
-.list-1 ul li p {
+.list-1 ul li p, .list-1 ul li:first-child p {
     margin: 0; /* Xóa margin mặc định */
     padding: 0px 20px; /* Khoảng cách giữa nội dung và viền của mỗi mục */
     border-radius: 5px; /* Bo tròn các góc của mỗi mục */
@@ -486,27 +534,32 @@ p {
 .list-1 ul li a p {
     color: black; /* Default text color */
     text-decoration: none; /* Remove underline */
-    font-size: 1vw;
+    font-size: 16px;
 }
-
 
 .list-1 ul li:first-child p {
     color: red; /* Đổi màu chữ thành đỏ cho mục đầu tiên */
-    padding: 0; /* Xóa padding cho mục đầu tiên khi không hover */
-
 }
 
 .list-1 ul li p:hover {
     color: black; /* Đổi màu chữ thành đen */
     background-color: white; /* Đổi màu nền thành trắng */
-    padding: 15px 25px; /* Thay đổi padding khi hover */
+    border-radius: 15px; /* Bo tròn các góc của mỗi mục */
 }
 
+.list-1 ul li:first-child p:hover {
+    color: black; /* Đổi màu chữ thành đen */
+    background-color: white; /* Đổi màu nền thành trắng */
+    border-radius: 15px; /* Bo tròn các góc của mỗi mục */
+}
 
 .bot-1 {
-    padding: 0 12.5%; /* Điều chỉnh padding */
+    font-size: 16px;
     margin-top: 1.5%;
     text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    color: gray;
 }
 
 .list-list-2 {
@@ -522,18 +575,67 @@ p {
 
 .top-2 h1{
     color: orangered;
-    font-size: 4vw; /* Font size relative to viewport width */
+    font-size: 48px; /* Font size relative to viewport width */
     margin-bottom: 2%; /* Margin below heading */
     text-align: center;
+    font-weight: var(--font-weight-bold);
 }
 
 .bot-2 {
     display: flex; /* Sử dụng flexbox */
     justify-content: space-between; /* Căn đều văn bản theo cả hai bên */
     font-weight: bold;
-    padding: 0 13.5%; /* Điều chỉnh padding */
     margin-bottom: 2%; /* Margin below heading */
 }
+
+/* Nút Previous */
+.slick-prev {
+    position: absolute;
+    top: 50%;
+    left: -45px; /* Điều chỉnh vị trí ra xa hơn một chút */
+    transform: translateY(-50%);
+    background-color: #000; /* Màu nền đen */
+    color: #fff;
+    border-radius: 50%;
+    width: 60px; /* Kích thước to hơn */
+    height: 60px; /* Kích thước to hơn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+
+
+/* Nút Next */
+.slick-next {
+    position: absolute;
+    top: 50%;
+    right: -45px; /* Điều chỉnh vị trí ra xa hơn một chút */
+    transform: translateY(-50%);
+    background-color: #000; /* Màu nền đen */
+    color: #fff;
+    border-radius: 50%;
+    width: 60px; /* Kích thước to hơn */
+    height: 60px; /* Kích thước to hơn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+
+
+.product-carousel {
+    margin-left:5%;
+    margin-right:5%;
+}
+
+
 
 
 .slick-dots {
@@ -579,15 +681,12 @@ p {
 }
 
 .table-list {
-    margin-top: 5%;
+    margin-top: 2%;
     display: grid;
     grid-template-columns: 50% 25% 25%; /* Giữ tỷ lệ các cột */
-    padding: 0 5%; /* Padding trái và phải */
-    margin-left: auto; /* Căn giữa với margin auto */
-    margin-right: auto; /* Căn giữa với margin auto */
-    width: 100%; /* Đảm bảo chiều rộng 100% cho mọi kích thước từ 2000px đến 1025px */
+    margin-left: 10%; /* Căn giữa với margin auto */
+    margin-right:10%; /* Căn giữa với margin auto */
 }
-
 
 
 .column {
@@ -604,10 +703,8 @@ p {
 .column td {
     border: 1px solid #ddd;
     padding: 20px;
-    text-align: left;
     font-family: Arial, sans-serif;
     text-align: center;
-    font-size: 18px;
 }
 
 .column th {
@@ -617,6 +714,12 @@ p {
     text-align: center;
     font-weight: bold;
 }
+
+.column td {
+    font-size: 16px;
+}
+
+
 
 .highlighted {
     background-color: #f2f2f2;
@@ -636,10 +739,8 @@ p {
     margin-top: 0;
     display: grid;
     grid-template-columns: 50% 50%; /* Chia đều 2 cột */
-    padding: 0 5%; /* Padding trái và phải */
-    margin-left: auto; /* Căn giữa với margin auto */
-    margin-right: auto; /* Căn giữa với margin auto */
-    width: 100%; /* Đảm bảo chiều rộng 100% cho mọi kích thước từ 2000px đến 1025px */
+    margin-left: 10%; /* Căn giữa với margin auto */
+    margin-right: 10%; /* Căn giữa với margin auto */
 }
 
 
@@ -843,7 +944,7 @@ p {
     border-radius: 0.625rem; /* Bo tròn góc sử dụng rem */
 }
 .fa-arrow-up-from-bracket:before {
-    margin-top: 8%;
+    margin-top: 3%;
 }
 
 .container2 {
@@ -1129,23 +1230,21 @@ p {
 }
 
 .themevale_heading h2 {
-    font-size: 3.5vw;
+    font-size: 48px;
     margin-top: 3vw;
     font-weight: bold;
 }
 
 
-.button.button-purchase {
-    display: inline-flex;
-    align-items: center;
-    background-color: #ff6600;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 30px;
-    font-weight: bold;
+.button.purchase{
+    background: orangered;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 20px 50px;
+    font-size: 20px;
 }
+
 
 .purchase-icon {
     margin-right: 10px;
@@ -1319,22 +1418,41 @@ p {
     padding: 0 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative; /* Đảm bảo các phần tử con có thể được định vị tương đối tới .main-preview */
-    margin-top: 25%;
-    left:-100px;
 }
 
 .preview-image {
-    position: relative; /* Đảm bảo .preview-image có thể được định vị tương đối tới .main-preview */
-    margin-left: 140px;
-    margin-right: 210px;
-    z-index: 0;
+    position: relative;
+    text-align: center; /* Căn giữa hình ảnh bên trong .preview-image */
 }
 
 .preview-image img {
-    width: 100%;
-    border-radius: 10px;
-    z-index: 0;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Bo góc cho hình ảnh */
 }
+
+.settings {
+    display: flex;
+    gap:1%;
+    align-items: flex-end; /* Đưa các ảnh xuống dưới cùng */
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    transform: translateX(-50%); /* Căn giữa phần settings */
+    width: 80%; /* Tùy chỉnh kích thước khung chứa */
+    z-index: 7;
+
+}
+
+.settings img {
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    object-fit: cover; /* Đảm bảo hình ảnh lấp đầy khung */
+    width: 23%; /* Điều chỉnh kích thước ảnh theo phần trăm */
+    height: auto; /* Giữ tỷ lệ gốc của ảnh */
+}
+
+
 
 .preview__header {
     display: flex;
@@ -1437,9 +1555,9 @@ p {
 }
 
 .blob {
-    left: -800px; /* Đặt phần tử blob sát lề trái */
-    width: 69%; /* Điều chỉnh kích thước theo ý muốn của bạn */
-    margin-top: 200px;
+    left: -50%;
+    width: 66%;
+    margin-top: 10%;
     height: auto; /* Đảm bảo rằng chiều cao tự động điều chỉnh theo nội dung */
     position: absolute;
     transition: transform 0.5s ease; /* Chuyển đổi mượt mà */
@@ -1572,17 +1690,16 @@ p {
 
 /* Phần bên phải của navbar */
 .navbar-right {
-
-        display: flex;
-        gap: 5%; /* Khoảng cách giữa hai nút */
-        text-align: left;
-        margin-left: 10px; /* Điều chỉnh lề trái */
-        margin-top: -15px;
+    display: flex;
+    gap: 5%; /* Khoảng cách giữa hai nút */
+    text-align: left;
+    margin-right: 40px;
+    margin-top: -15px;
 }
 
+
 .button {
-    flex: 1; /* Đảm bảo các nút có cùng kích thước */
-    padding: 1.5%; /* Đặt padding theo tỷ lệ phần trăm */
+    padding: 10px 30px; /* Đặt padding theo tỷ lệ phần trăm */
     text-decoration: none;
     border-radius: 15px; /* Bo tròn các góc */
     font-weight: bold;
@@ -1592,8 +1709,10 @@ p {
     transition: color 0.3s, background-color 0.3s; /* Thời gian chuyển màu chữ và màu nền */
     text-align: center; /* Căn giữa văn bản */
     box-sizing: border-box;
+    white-space: nowrap; /* Prevent text from wrapping */
+    display: inline-block; /* Keep the button inline and prevent it from shrinking */
+    font-size: 16px;
 }
-
 
 .button.change-logs {
     background: white; /* Nền mặc định */
@@ -1605,11 +1724,12 @@ p {
 }
 
 .button.open-store-now {
-    background-color: orangered;
-    color: black;
+    background: orangered;
+    color: white; /* Màu chữ mặc định */
     border: none;
     border-radius: 15px; /* Bo tròn các góc */
 }
+
 
 .button.change-logs::before,
 .button.open-store-now::before {
@@ -1674,14 +1794,32 @@ p {
     padding-right: 2.5%; /* Tương ứng với 50px */
     text-align: left;
     margin-top: 5%; /* Tương ứng với 100px */
+    opacity: 0; /* Ẩn ban đầu */
+    transform: translateX(-100%); /* Đẩy phần tử ra khỏi màn hình phía trái */
+    animation: slideIn 1.5s ease-out forwards; /* Áp dụng animation khi trang tải */
 }
 
+
+
+/* Định nghĩa animation */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
 .hero-content h1 {
-    font-size: 3.5vw; /* Tương ứng với 70px dựa trên viewport width */
+    font-size: 48px; /* Tương ứng với 70px dựa trên viewport width */
     margin-bottom: 0.5%; /* Tương ứng với 10px */
     color: black;
     text-align: left;
-    margin-left: 15%; /* Tương ứng với 300px */
+    margin-left: 30%; /* Tương ứng với 300px */
     font-family: sans-serif;
 }
 
@@ -1693,16 +1831,17 @@ p {
     color: #999;
     font-weight: bold;
     text-align: left;
-    margin-left: 15%; /* Tương ứng với 300px */
-    font-size: 1.25vw; /* Tương ứng với 18px dựa trên viewport width */
+    margin-left: 30%; /* Tương ứng với 300px */
+    font-size: 16px; /* Tương ứng với 18px dựa trên viewport width */
 }
 
 .hero-content h2 {
     color: #999;
     font-weight: bold;
     text-align: left;
-    margin-left: 23.25%; /* Tương ứng với 465px */
-    font-size: 0.75vw; /* Tương ứng với 12px dựa trên viewport width */
+    margin-left: 57%;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
 .note {
@@ -1711,15 +1850,18 @@ p {
 
 .buttons {
     display: flex;
-    gap: 1%; /* Khoảng cách giữa hai nút */
+    gap: 5%;
     text-align: left;
-    margin-left: 15%; /* Điều chỉnh lề trái */
-    margin-bottom: 1%; /* Khoảng cách dưới cùng */
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 30%;
+    margin-right: 20%;
+    margin-top: -15px;
 }
 
 .btn {
     flex: 1; /* Đảm bảo các nút có cùng kích thước */
-    padding: 2%; /* Đặt padding theo tỷ lệ phần trăm */
+    padding: 10px 30px; /* Đặt padding theo tỷ lệ phần trăm */
     text-decoration: none;
     border-radius: 15px; /* Bo tròn các góc */
     font-weight: bold;
@@ -1729,6 +1871,9 @@ p {
     transition: color 0.3s, background-color 0.3s; /* Thời gian chuyển màu chữ và màu nền */
     text-align: center; /* Căn giữa văn bản */
     box-sizing: border-box;
+    white-space: nowrap; /* Prevent text from wrapping */
+    display: inline-block; /* Keep the button inline and prevent it from shrinking */
+    font-size: 16px;
 }
 
 .btn.buy {
@@ -1788,33 +1933,173 @@ p {
     background-color: white; /* Nền khi hover */
 }
 
+/* Các phần tử trong slide-item đều bị ẩn và dịch chuyển lên trên ngoài viewport */
+.slide-item {
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Khi phần tử có class 'animate', nó sẽ trở nên hiển thị và di chuyển vào vị trí */
+.slide-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sử dụng animation delay để mỗi phần tử xuất hiện lần lượt */
+.slide-item:nth-child(1).animate {
+    animation: slideIn 1s ease-out forwards;
+    animation-delay: 0s;
+}
+
+.slide-item:nth-child(2).animate {
+    animation: slideIn 1s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.slide-item:nth-child(3).animate {
+    animation: slideIn 1s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+.slide-item:nth-child(4).animate {
+    animation: slideIn 1s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+.slide-item:nth-child(5).animate {
+    animation: slideIn 1s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+.slide-item:nth-child(6).animate {
+    animation: slideIn 1s ease-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 
 .highlight-2 {
     color: #383838;
 }
 
+.device-container {
+    display: flex;
+    justify-content: flex-end; /* Align the device-container to the right */
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    gap: 20px; /* Adjust spacing between the tablet and mobile views */
+}
+
+.tablet-view, .mobile-view {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.tablet-view {
+    max-width: 900px;
+    position: relative;
+    z-index: 1;
+    /* margin-top: 6%; */
+    margin-left: 7%;
+}
+
+/* Hiệu ứng cho macbook-slider di chuyển từ phải sang */
+.macbook-slider {
+    opacity: 0;
+    transform: translateX(100%); /* Đẩy phần tử ra ngoài phía bên phải */
+    animation: slideInRight 1.5s ease-out forwards;
+}
+
+/* Hiệu ứng cho iphone-slider di chuyển từ dưới lên */
+.iphone-slider {
+    opacity: 0;
+    transform: translateY(100%); /* Đẩy phần tử ra ngoài phía dưới */
+    animation: slideInUp 1.5s ease-out forwards;
+}
+
+.macbook-slider.animate {
+    opacity: 1;
+    transform: translateX(0); /* Macbook-slider di chuyển vào vị trí ban đầu */
+}
+
+.iphone-slider.animate {
+    opacity: 1;
+    transform: translateY(0); /* Iphone-slider di chuyển vào vị trí ban đầu */
+}
+/* Định nghĩa animation cho macbook-slider */
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Định nghĩa animation cho iphone-slider */
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.mobile-view {
+    max-width: 250px; /* Size of the mobile (iPhone) view */
+    position: absolute;
+    left: 0;/* Adjust the left position to overlay the tablet-view */
+    z-index: 2; /* Ensure the mobile-view is on top of the tablet-view */
+    transform: translateY(25%); /* Adjust the Y position if needed */
+}
+
+.macbook-slider img, .iphone-slider img {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.spinner {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+}
+
 .spinner-pause-btn {
     width: 50px;
     height: 50px;
-    border: 2px solid #f0f0f0; /* Viền màu nhạt */
-    border-radius: 50%; /* Bo tròn các góc */
-    background-color: #fff; /* Màu nền trắng */
+    border: 2px solid #f0f0f0;
+    border-radius: 50%;
+    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative; /* Để dễ dàng xử lý hiệu ứng */
-    z-index: 10;
+    position: relative;
+    z-index: 101;
 }
-.spinner{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0; /* Xóa khoảng cách mặc định của body */
-    background-color: none;
-    transform: translateY(-850px); /* Di chuyển nút lên trên */
-    z-index: 11;
-}
+
 .spinner-pause-btn::before {
     content: '';
     position: absolute;
@@ -1822,11 +2107,10 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    border: 2px solid transparent; /* Viền ban đầu trong suốt */
-    border-top: 3px solid black; /* Viền trên màu đen để tạo hiệu ứng */
-    border-radius: 50%; /* Bo tròn viền */
-    animation: spin-border 2s linear infinite; /* Quay viền */
-
+    border: 2px solid transparent;
+    border-top: 3px solid black;
+    border-radius: 50%;
+    animation: spin-border 2s linear infinite;
 }
 
 @keyframes spin-border {
@@ -1838,41 +2122,27 @@ p {
     }
 }
 
+/* Pause icon (two vertical bars) */
 .pause-icon {
     display: flex;
-    gap: 4px; /* Khoảng cách giữa hai đường kẻ của biểu tượng pause */
-    justify-content: center;
+    gap: 4px;
 }
 
 .pause-icon div {
     width: 6px;
     height: 20px;
-    background-color: black; /* Màu của các đường kẻ của biểu tượng pause */
+    background-color: black;
 }
 
-.macbook-slider {
-    position: relative;
-    z-index: 10;
-    max-width: 50%;
-    flex: 1;
-    padding-left: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top:55px;
+/* Play icon (triangle) */
+.play-icon {
+    width: 0;
+    height: 0;
+    border-left: 15px solid black;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
 }
 
-.iphone-slider {
-    max-width: 200px;
-    margin: 20px auto;
-    position: absolute; /* Hoặc bạn có thể sử dụng 'fixed' nếu muốn nó cố định khi cuộn trang */
-    margin-top: -120px;
-    left: 7%;
-    transform: translate(-50%, -50%);
-    z-index: 11;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-}
 .banner-2 {
     display: flex;
     position: fixed;
@@ -1884,10 +2154,12 @@ p {
     border-radius: 20px;
     width: fit-content;
     margin: 20px auto;
-    transform: translate(-50%, -40em); /* Đặt lại dịch chuyển để căn giữa ngang */
-    z-index: 15;
     left: 50%; /* Căn giữa ngang */
+    transform: translate(-50%, -50%); /* Điều chỉnh để căn giữa chính xác */
+    bottom: 5%;
+    z-index: 15;
 }
+
 
 .offer-text {
     font-weight: bold; /* Định dạng chữ của văn bản ưu đãi */
@@ -1961,7 +2233,20 @@ p {
     color: white; /* Màu biểu tượng trắng */
 }
 
+.button-4{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: red;
+    font-size: 50px; /* Further increase in font size */
+    margin-top: 20px; /* Adjusted margin */
+    cursor: pointer;
+}
 
+
+.button-4:hover {
+    color: white;
+}
 
 .slick-slide {
     margin: 0 10px; /* Khoảng cách giữa các slide */
@@ -1987,11 +2272,22 @@ p {
 
 .top-2 p{
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     font-family: sans-serif;
     margin-top: 20px;
+    margin-left: 30%;
+    margin-right: 30%;
+    color: gray;
 }
 
+.bot-2 p {
+    text-align: center;
+    font-size: 16px;
+    font-family: sans-serif;
+    margin-top: 20px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
 .swiper-container {
     width: 100%;
     overflow: hidden;
@@ -2009,7 +2305,8 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 20px; /* Adjust margin to control spacing between slides */
+    margin-left: -30%;
+    margin-right: -30%;
 }
 
 .review-box {
@@ -2019,7 +2316,7 @@ p {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     width: 450px;
-    height: 500px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -2038,7 +2335,6 @@ p {
 
 .review-box p {
     font-style: italic;
-    margin: 0 0 10px;
 }
 
 .review-text {
@@ -2058,49 +2354,6 @@ p {
     background: #e74c3c;
 }
 
-.settings {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end; /* Căn các phần tử con xuống dưới cùng */
-    position: absolute;
-    bottom: 0;
-    transform: translateX(-100%);
-    left: 50%;
-    width: 50%;
-    z-index: 7;
-    
-}
-
-.settings img {
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    object-fit: cover;
-    align-self: flex-end; /* Đảm bảo từng hình ảnh được căn xuống dưới cùng */
-}
-
-.image-1 {
-    width: 370px;
-    height: 500px;
-}
-
-.image-2 {
-    width: 240px;
-    height: 260px;
-}
-
-.image-3 {
-    width: 245px;
-    height: 195px;
-}
-
-.image-4 {
-    width: 250px;
-    height: 400px;
-}
-
-.settings img {
-    object-fit: cover; /* Đảm bảo hình ảnh lấp đầy khung */
-}
 
 .navbar-menu .close-menu {
     position: absolute;
@@ -2143,11 +2396,6 @@ p {
         width: 24px;
     }
 
-    .banner-2 {
-        width: 100%;
-        height: 3vw;
-        margin-top: 20%
-    }
 
     .icon-line {
         height: 2px;
