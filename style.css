@@ -28,33 +28,7 @@ html, body {
     visibility: hidden;
 }
 
-.slide-item {
-    border-radius: 10px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    color: black;
-    height: 250px;
-    padding: 10px 20px;
-    margin: 0;
-}
 
-@keyframes slideIn {
-    0% {
-      opacity: 0; /* Ẩn ban đầu */
-      transform: translateX(-100%); /* Đẩy phần tử ra khỏi màn hình phía trái */
-    }
-    100% {
-      opacity: 1; /* Hiển thị phần tử */
-      transform: translateX(0); /* Di chuyển phần tử về vị trí gốc */
-    }
-  }
-  
-  .slide-item {
-    opacity: 0; /* Ẩn ban đầu */
-    transform: translateX(-100%); /* Đẩy phần tử ra khỏi màn hình phía trái */
-    animation: slideIn 1.5s ease-out forwards; /* Áp dụng animation khi trang tải */
-  }
-  
 
 .slide-item h3 {
     text-align: center;
@@ -122,18 +96,30 @@ html, body {
     margin-bottom: 4%; /* Margin below description */
 }
 
-/* Container for achievement items */
-.achievement-2 {
+@keyframes slideInUp {
+    0% {
+      opacity: 0; /* Ẩn ban đầu */
+      transform: translateY(100%); /* Đẩy phần tử ra khỏi màn hình phía dưới */
+    }
+    100% {
+      opacity: 1; /* Hiển thị phần tử */
+      transform: translateY(0); /* Di chuyển phần tử về vị trí gốc */
+    }
+  }
+  
+  .achievement-2 {
     padding: 2%; /* Padding xung quanh container */
     margin-top: -5%;
     opacity: 0; /* Ẩn ban đầu */
     transform: translateY(100%); /* Đẩy phần tử ra khỏi màn hình phía dưới */
-    animation: slideInUp 1.5s ease-out forwards; /* Áp dụng animation khi trang tải */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Hiệu ứng chuyển tiếp */
   }
-
+  
   .achievement-2.animate {
     animation: slideInUp 1.5s ease-out forwards; /* Áp dụng animation khi lớp .animate được thêm vào */
   }
+  
+
 
 /* Slide container with grid layout */
 .slide-2 {
@@ -206,9 +192,12 @@ html, body {
     object-fit: cover;
     opacity: 0; /* Ẩn ban đầu */
     transform: translateY(100%); /* Đẩy phần tử ra khỏi màn hình phía dưới */
-    animation: slideInUp 1.5s ease-out forwards; /* Áp dụng animation khi trang tải */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Hiệu ứng chuyển tiếp */
 }
 
+.achievement-3.animate {
+    animation: slideInUp 1.5s ease-out forwards; /* Áp dụng animation khi lớp .animate được thêm vào */
+  }
 .left, .right {
     flex: 1;
     padding: 2%;
@@ -234,7 +223,15 @@ html, body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    opacity: 0; /* Ẩn ban đầu */
+    transform: translateY(100%); /* Đẩy phần tử ra khỏi màn hình phía dưới */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Hiệu ứng chuyển tiếp */
 }
+
+.achievement-4.animate {
+    animation: slideInUp 1.5s ease-out forwards; /* Áp dụng animation khi lớp .animate được thêm vào */
+  }
+
 
 .achievement-4 .top {
     display: flex;
@@ -568,10 +565,47 @@ html, body {
     margin-top: 2%
 }
 
+.swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-70%);
+    transform: translateX(-300%);
+    z-index: 10;
+}
+
+/* Nút điều hướng tiếp theo */
+.swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-70%);
+    transform: translateX(300%);
+    z-index: 10;
+}
+
+/* Tùy chỉnh kích thước và kiểu dáng của nút nếu cần */
+.swiper-button-prev, .swiper-button-next {
+    width: 100px; /* Kích thước của nút */
+    height: 100px; /* Kích thước của nút */
+    background-color: none !important; /* Sử dụng !important để ghi đè các quy tắc khác */
+    color: gray !important; /* Nếu cần */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Hình tròn */
+    cursor: pointer;
+}
 .top-2 {
     position: relative;
     margin-top: 1.5%;
-}
+    opacity: 0; /* Ẩn ban đầu */
+    transform: translateY(100%); /* Đẩy phần tử ra khỏi màn hình phía dưới */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Hiệu ứng chuyển tiếp */
+  }
+  
+  .top-2.animate {
+    animation: slideInUp 1.5s ease-out forwards; /* Áp dụng animation khi lớp .animate được thêm vào */
+  }
+
 
 .top-2 h1{
     color: orangered;
@@ -638,34 +672,6 @@ html, body {
 
 
 
-.slick-dots {
-    display: flex; /* Hiển thị dạng flexbox */
-    justify-content: center; /* Canh giữa theo chiều ngang */
-    list-style: none; /* Ẩn dấu chấm */
-    padding: 0;
-    margin-top: 1%; /* Khoảng cách từ carousel đến chấm chuyển đổi */
-    color: rgb(255, 208, 0);
-}
-
-.slick-dots li {
-    margin: 0 0.25%; /* Khoảng cách giữa các chấm */
-}
-
-/* Styling cho chấm chuyển đổi */
-.slick-dots button {
-    background-color: #ccc; /* Màu nền */
-    border: none; /* Ẩn viền */
-    width: 0.5%; /* Kích thước */
-    height: 0.5%; /* Kích thước */
-    border-radius: 50%; /* Hình tròn */
-    cursor: pointer; /* Con trỏ chuột */
-}
-
-/* Styling cho chấm chuyển đổi khi active */
-.slick-dots button.slick-active {
-    background-color: #333; /* Màu nền khi active */
-}
-
 .center {
     margin-top: 3%;
     padding: 0 3%;
@@ -685,8 +691,15 @@ html, body {
     display: grid;
     grid-template-columns: 50% 25% 25%; /* Giữ tỷ lệ các cột */
     margin-left: 10%; /* Căn giữa với margin auto */
-    margin-right:10%; /* Căn giữa với margin auto */
-}
+    margin-right:10%; /* Căn giữa với margin auto */opacity: 0; /* Ẩn ban đầu */
+    transform: translateY(100%); /* Đẩy phần tử ra khỏi màn hình phía dưới */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Hiệu ứng chuyển tiếp */
+  }
+  
+  .table-list.animate {
+    animation: slideInUp 1.5s ease-out forwards; /* Áp dụng animation khi lớp .animate được thêm vào */
+  }
+
 
 
 .column {
@@ -741,7 +754,15 @@ html, body {
     grid-template-columns: 50% 50%; /* Chia đều 2 cột */
     margin-left: 10%; /* Căn giữa với margin auto */
     margin-right: 10%; /* Căn giữa với margin auto */
-}
+    opacity: 0; /* Ẩn ban đầu */
+    transform: translateY(100%); /* Đẩy phần tử ra khỏi màn hình phía dưới */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Hiệu ứng chuyển tiếp */
+  }
+  
+  .table-list-1.animate {
+    animation: slideInUp 1.5s ease-out forwards; /* Áp dụng animation khi lớp .animate được thêm vào */
+  }
+
 
 
 .rectangle {
@@ -1144,6 +1165,7 @@ html, body {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10%;
 }
 
 .container-5 h1{
@@ -1172,13 +1194,47 @@ html, body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     padding: 15px; /* Điều chỉnh padding để phù hợp với nội dung */
-    transition: transform 0.2s;
     text-align: center; /* Canh giữa nội dung */
+    opacity: 0; /* Ẩn ban đầu */
+    transform: translateY(100%); /* Đẩy phần tử ra khỏi màn hình phía dưới */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Hiệu ứng chuyển tiếp cho opacity và transform */
 }
 
+.app-card.animate {
+    opacity: 1; /* Hiện phần tử */
+    transform: translateY(0); /* Đưa phần tử trở về vị trí ban đầu */
+}
+
+.app-card:nth-child(1).animate {
+    animation-delay: 0s;
+}
+
+.app-card:nth-child(2).animate {
+    animation-delay: 0.2s;
+}
+
+.app-card:nth-child(3).animate {
+    animation-delay: 0.4s;
+}
+
+.app-card:nth-child(4).animate {
+    animation-delay: 0.6s;
+}
+
+.app-card:nth-child(5).animate {
+    animation-delay: 0.8s;
+}
+
+.app-card:nth-child(6).animate {
+    animation-delay: 1s;
+}
+
+/* Thêm hiệu ứng hover */
 .app-card:hover {
     transform: translateY(-5%);
+    transition: transform 0.3s ease; /* Hiệu ứng hover nhanh hơn */
 }
+
 
 .app-card img {
     max-width: 80px; /* Đặt kích thước cố định cho hình ảnh */
@@ -1433,7 +1489,7 @@ html, body {
 
 .settings {
     display: flex;
-    gap:1%;
+    gap: 1%;
     align-items: flex-end; /* Đưa các ảnh xuống dưới cùng */
     position: absolute;
     bottom: 0;
@@ -1441,17 +1497,71 @@ html, body {
     transform: translateX(-50%); /* Căn giữa phần settings */
     width: 80%; /* Tùy chỉnh kích thước khung chứa */
     z-index: 7;
-
 }
 
 .settings img {
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    object-fit: cover; /* Đảm bảo hình ảnh lấp đầy khung */
-    width: 23%; /* Điều chỉnh kích thước ảnh theo phần trăm */
-    height: auto; /* Giữ tỷ lệ gốc của ảnh */
+    opacity: 0; /* Ẩn ảnh ban đầu */
+    transform: translateY(100%); /* Đẩy ảnh xuống khỏi màn hình ban đầu */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Hiệu ứng chuyển tiếp */
 }
 
+.settings img.animate {
+    opacity: 1; /* Hiển thị ảnh */
+    transform: translateY(0); /* Đưa ảnh về vị trí ban đầu */
+}
+
+
+/* Animation cho settings 4 (di chuyển từ dưới lên) */
+.settings img:nth-child(4) {
+    bottom: -100px;
+    right: 20px;
+    animation: moveUp 1.5s ease forwards 0s; /* Bắt đầu ngay lập tức */
+}
+
+/* Animation cho settings 1 (di chuyển từ trái qua phải) */
+.settings img:nth-child(1) {
+    left: -100px;
+    top: 20px;
+    animation: moveRight 1.5s ease forwards 1s; /* Bắt đầu sau 1s */
+}
+
+/* Animation cho settings 2 (di chuyển từ dưới lên) */
+.settings img:nth-child(2) {
+    bottom: -100px;
+    left: 20px;
+    animation: moveUp 1.5s ease forwards 2s; /* Bắt đầu sau 2s */
+}
+
+/* Animation cho settings 3 (di chuyển từ trái qua phải) */
+.settings img:nth-child(3) {
+    left: -100px;
+    bottom: 20px;
+    animation: moveRight 1.5s ease forwards 3s; /* Bắt đầu sau 3s */
+}
+
+/* Keyframes cho di chuyển từ dưới lên */
+@keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes cho di chuyển từ trái qua phải */
+@keyframes moveRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
 
 .preview__header {
@@ -1933,62 +2043,49 @@ html, body {
     background-color: white; /* Nền khi hover */
 }
 
-/* Các phần tử trong slide-item đều bị ẩn và dịch chuyển lên trên ngoài viewport */
-.slide-item {
-    opacity: 0;
-    transform: translateY(-100%);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
 
-/* Khi phần tử có class 'animate', nó sẽ trở nên hiển thị và di chuyển vào vị trí */
-.slide-item.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Sử dụng animation delay để mỗi phần tử xuất hiện lần lượt */
-.slide-item:nth-child(1).animate {
-    animation: slideIn 1s ease-out forwards;
+  .slide-item {
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    color: black;
+    height: 250px;
+    padding: 10px 20px;
+    margin: 0;
+    opacity: 0; /* Ẩn ban đầu */
+    transform: translateX(-100%); /* Đẩy phần tử ra khỏi màn hình phía trái */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Hiệu ứng chuyển tiếp khi lớp .animate được thêm vào */
+  }
+  
+  .slide-item.animate {
+    animation: slideIn 1.5s ease-out forwards; /* Áp dụng animation khi lớp .animate được thêm vào */
+  }
+  
+  /* Sử dụng animation delay để mỗi phần tử xuất hiện lần lượt */
+  .slide-item:nth-child(1).animate {
     animation-delay: 0s;
-}
-
-.slide-item:nth-child(2).animate {
-    animation: slideIn 1s ease-out forwards;
+  }
+  
+  .slide-item:nth-child(2).animate {
     animation-delay: 0.2s;
-}
-
-.slide-item:nth-child(3).animate {
-    animation: slideIn 1s ease-out forwards;
+  }
+  
+  .slide-item:nth-child(3).animate {
     animation-delay: 0.4s;
-}
-
-.slide-item:nth-child(4).animate {
-    animation: slideIn 1s ease-out forwards;
+  }
+  
+  .slide-item:nth-child(4).animate {
     animation-delay: 0.6s;
-}
-
-.slide-item:nth-child(5).animate {
-    animation: slideIn 1s ease-out forwards;
+  }
+  
+  .slide-item:nth-child(5).animate {
     animation-delay: 0.8s;
-}
-
-.slide-item:nth-child(6).animate {
-    animation: slideIn 1s ease-out forwards;
+  }
+  
+  .slide-item:nth-child(6).animate {
     animation-delay: 1s;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
+  }
+  
 
 
 .highlight-2 {
@@ -2153,12 +2250,19 @@ html, body {
     padding: 20px 50px;
     border-radius: 20px;
     width: fit-content;
-    margin: 20px auto;
     left: 50%; /* Căn giữa ngang */
-    transform: translate(-50%, -50%); /* Điều chỉnh để căn giữa chính xác */
-    bottom: 5%;
+    transform: translateX(-50%); /* Căn giữa theo chiều ngang */
+    bottom: 2%; /* Cách đáy màn hình 2% */
     z-index: 15;
+    opacity: 0; /* Ẩn ban đầu */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Hiệu ứng chuyển tiếp */
 }
+
+.banner-2.animate {
+    opacity: 1; /* Hiển thị banner */
+    transform: translateX(-50%) translateY(0); /* Căn ngang và đưa về vị trí gốc */
+}
+
 
 
 .offer-text {
@@ -2288,71 +2392,208 @@ html, body {
     margin-left: 30%;
     margin-right: 30%;
 }
+/* Điều chỉnh swiper-container */
 .swiper-container {
     width: 100%;
+    height: auto; /* Tự động điều chỉnh chiều cao dựa trên nội dung */
     overflow: hidden;
     padding: 20px 0; /* Padding trên và dưới cho swiper */
+    position: relative;
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước tổng thể */
 }
 
+.swiper-controls {
+    position: absolute;
+    width: 100%;
+    bottom: 10px; /* Căn chỉnh khoảng cách từ dưới cùng của phần tử chứa */
+    top: auto; /* Bỏ qua thuộc tính top nếu không cần */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Căn chỉnh các phần tử con theo chiều dọc */
+    z-index: 5;
+}
+
+/* Nút điều hướng next */
+.swiper-container-next {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    background-color: transparent;
+    color: black !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    right:750px;
+    bottom: 3px;
+    z-index: 10;
+}
+
+/* Nút điều hướng prev */
+.swiper-container-prev {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    background-color: transparent;
+    color: black !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    left: 750px;
+    bottom: 3px;
+    z-index: 10;
+}
+
+/* Slick dots */
+.slick-dots {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 5;
+}
+
+.slick-dots li {
+    margin: 0 5px;
+}
+
+.slick-dots li button {
+    background-color: #f5b5b5 !important;
+    border-radius: 50%;
+    width: 12px; 
+    height: 12px;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.slick-dots li button::before,
+.slick-dots li button::after {
+    content: none !important;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #ff5722 !important;
+    width: 16px;
+    height: 16px;
+    transform: scale(1.2);
+}
 
 .swiper-wrapper {
     display: flex;
+    gap:50px !important; /* Điều chỉnh lại khoảng cách tùy ý, 500px có thể quá lớn */
 }
 
 .swiper-slide {
-    flex: 0 0 auto;
-    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: -30%;
-    margin-right: -30%;
+    margin-left: -50%;
 }
 
 .review-box {
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 450px;
-    height: 400px;
+    padding: 30px; /* Increased padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 650px; /* Adjusted width for a larger box */
+    height: 450px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    margin-bottom: 50px;
+}
+
+.review-header {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.review-box h3 {
-    color: #e74c3c;
-    margin: 0 0 10px;
-    font-size: 18px;
-}
-
-.stars {
-    color: #f39c12;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
 }
 
-.review-box p {
-    font-style: italic;
+.reviewer-info {
+    display: flex;
+    flex-direction: column;
 }
 
-.review-text {
-    color: #333;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.read-more {
-    color: #e74c3c;
-    text-decoration: underline;
+.reviewer-name {
+    color: #e74c3c; /* Red color for the name */
     font-weight: bold;
-    margin-top: auto;
 }
 
-.swiper-pagination-bullet {
-    background: #e74c3c;
+.reviewer-role {
+    color: #666;
+    font-size: 0.9em;
 }
+
+.review-stars {
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    color: #f1c40f; /* Gold color for the stars */
+    font-size: 18px;
+    margin-left: 2px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+.review-content {
+    color: #333;
+    line-height: 1.5;
+    font-size: 1em;
+    max-height: 100px; /* Chiều cao giới hạn cho trạng thái thu gọn */
+    overflow: hidden; /* Ẩn phần văn bản vượt quá chiều cao */
+    transition: max-height 0.3s ease; /* Hiệu ứng chuyển tiếp mượt mà */
+}
+
+.review-content.expanded {
+    max-height: none; /* Cho phép chiều cao mở rộng không giới hạn */
+}
+
+.read-more-btn {
+    display: block; /* Hiển thị như một khối */
+    color: #e74c3c;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px; /* Khoảng cách giữa đoạn văn và nút */
+    background: none;
+    border: none;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+
+
+
+
+
+
+/* .swiper-button-prev, .swiper-button-next {
+    color: #000; /* Đổi màu của nút */
+    /* font-size: 20px; */
+/* }
+
+.swiper-button-prev::after, .swiper-button-next::after {
+    content: '';
+} */ 
+
 
 
 .navbar-menu .close-menu {
@@ -2380,10 +2621,6 @@ html, body {
 
 /* -----reponsive------ */
 @media (max-width: 1024px) {
-    html, body {
-        max-width: 100%;
-        overflow-x: hidden; /* Ngăn chặn cuộn ngang */
-    }
     
     #nav-menu-icon {
         display: block;
