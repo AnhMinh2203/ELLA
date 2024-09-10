@@ -181,7 +181,42 @@
         
 </section>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const slideItems = document.querySelectorAll('.slide-item');
+    const achievementItems2 = document.querySelectorAll('.achievement-2');
+    const achievementItems3 = document.querySelectorAll('.achievement-3');
+    const achievementItems4 = document.querySelectorAll('.achievement-4');
+    const banner = document.querySelectorAll('.banner-2');
+    const top = document.querySelectorAll('.top-2');
+    const table = document.querySelectorAll('.table-list');
+    const table1 = document.querySelectorAll('.table-list-1');
+    const ImgItems = document.querySelectorAll('.settings img');
+    const appCards = document.querySelectorAll('.app-card');
 
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target); // Ngừng quan sát sau khi hoạt ảnh đã chạy
+            }
+        });
+    }, { threshold: 0.1 }); // Ngưỡng 10% của phần tử vào view
+
+    slideItems.forEach(item => observer.observe(item));
+    achievementItems2.forEach(item => observer.observe(item));
+    achievementItems3.forEach(item => observer.observe(item));
+    achievementItems4.forEach(item => observer.observe(item));
+    banner.forEach(item => observer.observe(item));
+    top.forEach(item => observer.observe(item));
+    table.forEach(item => observer.observe(item));
+    table1.forEach(item => observer.observe(item));
+    ImgItems.forEach(item => observer.observe(item));
+    appCards.forEach(card => observer.observe(card));
+
+});
+
+  </script>
 
 <script>
     $(document).ready(function(){
@@ -306,10 +341,10 @@ document.getElementById('close-btn').addEventListener('click', function() {
                             <p>Combination of SEO and our web development team make a powerful weapon to get super high conversion rate websites.</p>
                         </div>
                     </div>   
-            </div>      
+            </div>
+          
         </div>
  
-
 
     <div class="achievements">
         <div class="achievement-1">
@@ -971,7 +1006,8 @@ document.getElementById('close-btn').addEventListener('click', function() {
           </div>
         </div>
       </div>
-    </div>
+      
+      
       
       
     <script type="text/javascript">
@@ -983,8 +1019,8 @@ document.getElementById('close-btn').addEventListener('click', function() {
                 autoplaySpeed: 2000,
                 dots: false,
                 arrows: true,
-                prevArrow: '<button type="button" class="slick-prev">Previous</button>',
-                nextArrow: '<button type="button" class="slick-next">Next</button>',
+                prevArrow: '<div class="swiper-button-prev"></div>',
+                nextArrow: '<div class="swiper-button-next"></div>',
                 responsive: [
                     {
                         breakpoint: 1024,
@@ -1012,9 +1048,8 @@ document.getElementById('close-btn').addEventListener('click', function() {
                 ]
             });
         });
-        </script>
-        
-      
+    </script>
+    
 
 
     
@@ -1376,128 +1411,172 @@ document.getElementById('close-btn').addEventListener('click', function() {
                 <p>See what our customers say about us. It really matters for us, how good or bad we will make it for evaluation to make Ella better.</p>
             </div>
             <div class="swiper-container">
+                <div class="swiper-controls">
+                <!-- Nút prev -->
+                    <div class="swiper-container-prev"><i class="fa-solid fa-left-long"></i></div>
+
+                    <!-- Nút next -->
+                    <div class="swiper-container-next"><i class="fa-solid fa-right-long"></i></div>
+
+                    <div class="slick-dots"></div>
+                </div>
+
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="review-box">
-                            <h3>G4mbI3</h3>
-
-                            <p class="category">for Customer Service</p>
-                            <p class="stars">★★★★★</p>
-                            <p class="review-text">I already loved the template but a couple of days ag I wanted to update and make a few customizations and also needed a few tweaks from support, they solved everything and dd a great work customizing as asked.</p>
-                            <a href="#" class="read-more">Read More</a>
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <span class="reviewer-name">G4mbI3</span>
+                                    <span class="reviewer-role">for Customer Service</span>
+                                </div>
+                                <div class="review-stars">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="review-content">
+                                <p>I already loved the template but a couple of days ago I wanted to update and make a few customizations and also needed a few tweaks from support, they solved everything and did a great work customizing as asked.</p>
+                            </div>
                         </div>
                     </div>
+                
                     <div class="swiper-slide">
                         <div class="review-box">
-                            <h3>liya1995</h3>
-                            
-                            <p class="category">for Customer Service</p>
-                            <p class="stars">★★★★★</p>
-                            <p class="review-text">The template function is very complete, I can use the template inside to meet a lot of needs. Similar to the header fixed at the top, back to the top function. And there are 6 types for header and footer styles in a template. It is worth mentioning that when I need help, the service team will always solve it for me as soon as possible, and they are very patient to tell me how to modify it. I am very honored to receive 12 sets of template services at this price.</p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="review-box">
-                            <h3>DigitalFirstMind</h3>
-                            
-                            <p class="category">for Customer Service</p>
-                            <p class="stars">★★★★★</p>
-                            <p class="review-text">I already bought Ella for another project and decided to buy again for our store. It was not an easy choice as I had to decide also between this and another theme which is highly rated on Themeforest. I bought both but in the end, I used Ella. Its MegaMenu is just amazing and the documentation on the theme features is just perfect. It's a complete theme but can be also quite complex if you want to use "all" of its features. Still, everything is well documented and step by step you can achieve what you need for sure. Last, I had some issues I needed to clear and the support was professional, addressed my concerns and gave me the solutions. I had some issues I needed to clear and the support was professional, addressed my concerns and gave me the solutions.</p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="review-box">
-                            <h3>Underhance</h3>
-                            <p class="category">for Customer Service</p>
-                            <p class="stars">★★★★★</p>
-                            <p class="review-text">Not only Ella is one of the most comprehensive and well thought themes I've ever seen, but the team (both customer service and technical) work efficiently, quickly and go beyond to help you. There is no doubt that I would use them for future projects and and I would recommend them without hesitation. </p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="review-box">
-                            <h3>purplexedqt</h3>
-                            
-                            <p class="category">for Customer Service</p>
-                            <p class="stars">★★★★★</p>
-                            <p class="review-text">I already loved the template but a couple of days ag I wanted to update and make a few customizations and also needed a few tweaks from support, they solved everything and dd a great work customizing as asked.</p>
-                            <a href="#" class="read-more">Read More</a>
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <span class="reviewer-name">purplexedqt</span>
+                                    <span class="reviewer-role">for Customer Service</span>
+                                </div>
+                                <div class="review-stars">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="review-content">
+                                <p>I already loved the template but a couple of days ago I wanted to update and make a few customizations and also needed a few tweaks from support, they solved everything and did a great job customizing as asked.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="swiper-slide">
-                        <div class="review-box">
-                            <h3>purplexedqt</h3>
-                            
-                            <p class="category">for Customer Service</p>
-                            <p class="stars">★★★★★</p>
-                            <p class="review-text">I already loved the template but a couple of days ag I wanted to update and make a few customizations and also needed a few tweaks from support, they solved everything and dd a great work customizing as asked.</p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="review-box">
-                            <h3>purplexedqt</h3>
-                            
-                            <p class="category">for Customer Service</p>
-                            <p class="stars">★★★★★</p>
-                            <p class="review-text">I already loved the template but a couple of days ag I wanted to update and make a few customizations and also needed a few tweaks from support, they solved everything and dd a great work customizing as asked.</p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="review-box">
-                            <h3>purplexedqt</h3>
-                            
-                            <p class="category">for Customer Service</p>
-                            <p class="stars">★★★★★</p>
-                            <p class="review-text">I already loved the template but a couple of days ag I wanted to update and make a few customizations and also needed a few tweaks from support, they solved everything and dd a great work customizing as asked.</p>
-                            <a href="#" class="read-more">Read More</a>
+                        <div class="swiper-slide">
+                            <div class="review-box">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <span class="reviewer-name">DigitalFirstMind</span>
+                                    <span class="reviewer-role">for Customer Service</span>
+                                </div>
+                                <div class="review-stars">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="review-content">
+                                <p>I already bought Ella for another project and decided to buy again for our store. It was not an easy choice as I had to decide also between this and another theme which is highly rated on Themeforest. I bought both but in the end, I used Ella. Its MegaMenu is just amazing and the documentation on the theme features is just perfect.</p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="swiper-slide">
                         <div class="review-box">
-                            <h3>purplexedqt</h3>
-                            
-                            <p class="category">for Customer Service</p>
-                            <p class="stars">★★★★★</p>
-                            <p class="review-text">I already loved the template but a couple of days ag I wanted to update and make a few customizations and also needed a few tweaks from support, they solved everything and dd a great work customizing as asked.</p>
-                            <a href="#" class="read-more">Read More</a>
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <span class="reviewer-name">Underhance</span>
+                                    <span class="reviewer-role">for Customer Service</span>
+                                </div>
+                                <div class="review-stars">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="review-content">
+                                <p>Not only Ella is one of the most comprehensive and well-thought themes I've ever seen, but the team works efficiently, quickly, and goes beyond to help you. I would recommend them without hesitation.</p>
+                            </div>
                         </div>
                     </div>
+
                     <div class="swiper-slide">
                         <div class="review-box">
-                            <h3>purplexedqt</h3>
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <span class="reviewer-name">Underhance</span>
+                                    <span class="reviewer-role">for Customer Service</span>
+                                </div>
+                                <div class="review-stars">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="review-content">
+                                <p>
+                                    as many functions. Operation is also fast. As xcddddddddddddddddddddddddddwcewcwccdsccscccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccazefwdczxedxa newbie, there will be a lot of questions I don't understand, ella's team is very patient to solve my problems and help my website more and more perfect, worth recommending. Thank you for your help.love~I really like ella this theme, the layout is clear and has many functions. Operation is also fast. As a newbie, there will be a lot of questions I don't understand, ella's team is very patient to solve my problems and help my website more and more perfect, worth recommending. Thank you for your help.love~
+                                </p>
+                                <button class="read-more-btn">Read More</button>
+                            </div>
                             
-                            <p class="category">for Customer Service</p>
-                            <p class="stars">★★★★★</p>
-                            <p class="review-text">I already loved the template but a couple of days ag I wanted to update and make a few customizations and also needed a few tweaks from support, they solved everything and dd a great work customizing as asked.</p>
-                            <a href="#" class="read-more">Read More</a>
                         </div>
                     </div>
+                </div>
             </div>
 
             <script>
-                $('.swiper-wrapper').slick({
+              document.querySelectorAll('.read-more-btn').forEach(function(button) {
+    button.addEventListener('click', function() {
+        var reviewContent = this.previousElementSibling;
+        
+        // Kiểm tra nếu hiện tại đoạn văn bản đã mở rộng hay chưa
+        if (reviewContent.classList.contains('expanded')) {
+            reviewContent.classList.remove('expanded');
+            this.textContent = 'Read More'; // Đổi lại thành "Read More"
+        } else {
+            reviewContent.classList.add('expanded');
+            this.textContent = 'Read Less'; // Đổi thành "Read Less"
+        }
+    });
+});
+
+
+
+
+
+
+            </script>
+             
+                <script>
+                    $('.swiper-wrapper').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    infinite: true, // Đây là phần quan trọng để cuộn liên tục
+    infinite: true,
     dots: true,
-    arrows: true,
-    prevArrow: '<button type="button" class="slick-prev">Previous</button>',
-    nextArrow: '<button type="button" class="slick-next">Next</button>',
+    arrows: false,
     responsive: [
         {
             breakpoint: 1024,
             settings: {
                 slidesToShow: 3,
                 slidesToScroll: 1,
-                infinite: true // Cuộn liên tục cho breakpoint này
+                infinite: true
             }
         },
         {
@@ -1505,7 +1584,7 @@ document.getElementById('close-btn').addEventListener('click', function() {
             settings: {
                 slidesToShow: 2,
                 slidesToScroll: 1,
-                infinite: true // Cuộn liên tục cho breakpoint này
+                infinite: true
             }
         },
         {
@@ -1513,13 +1592,27 @@ document.getElementById('close-btn').addEventListener('click', function() {
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                infinite: true // Cuộn liên tục cho breakpoint này
+                infinite: true
             }
         }
     ]
 });
 
+                </script>
+                    
+            <script>
+                // Thêm sự kiện click cho nút next
+$('.swiper-container-next').on('click', function() {
+    $('.swiper-wrapper').slick('slickNext'); // Chuyển đến slide tiếp theo
+});
+
+// Thêm sự kiện click cho nút prev
+$('.swiper-container-prev').on('click', function() {
+    $('.swiper-wrapper').slick('slickPrev'); // Quay lại slide trước
+});
+
             </script>
+
             
             
             
@@ -1659,7 +1752,6 @@ document.getElementById('close-btn').addEventListener('click', function() {
                     <a class="link link-underline" href="https://halosoft.ticksy.com/" target="_blank">Contact Us</a>
                 </div>
             </div>
-</div>
 </div>
 </div>
 </main>
