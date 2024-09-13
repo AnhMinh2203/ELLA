@@ -2394,7 +2394,7 @@ html, body {
 }
 /* Điều chỉnh swiper-container */
 .swiper-container {
-    width: 100%;
+    width: auto;
     height: auto; /* Tự động điều chỉnh chiều cao dựa trên nội dung */
     overflow: hidden;
     padding: 20px 0; /* Padding trên và dưới cho swiper */
@@ -2492,15 +2492,23 @@ html, body {
 
 .swiper-wrapper {
     display: flex;
-    gap:50px !important; /* Điều chỉnh lại khoảng cách tùy ý, 500px có thể quá lớn */
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap; /* Không cho phép các slide xuống dòng */
+    gap: 0; /* Loại bỏ khoảng cách flex */
+    
 }
 
 .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: -50%;
+    margin-left: 0;
+    margin-right: 580px;
+   
 }
+
+
 
 .review-box {
     background-color: white;
@@ -2508,11 +2516,11 @@ html, body {
     border-radius: 8px;
     padding: 30px; /* Increased padding */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 650px; /* Adjusted width for a larger box */
+    width: 560px; /* Adjusted width for a larger box */
     height: 450px;
     margin: 20px auto;
     font-family: Arial, sans-serif;
-    margin-bottom: 50px;
+    margin-bottom: -180px;
 }
 
 .review-header {
@@ -2563,21 +2571,11 @@ hr {
     transition: max-height 0.3s ease; /* Hiệu ứng chuyển tiếp mượt mà */
 }
 
+
 .review-content.expanded {
     max-height: none; /* Cho phép chiều cao mở rộng không giới hạn */
 }
 
-.read-more-btn {
-    display: block; /* Hiển thị như một khối */
-    color: #e74c3c;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px; /* Khoảng cách giữa đoạn văn và nút */
-    background: none;
-    border: none;
-    text-decoration: none;
-    font-size: 1em;
-}
 
 
 
@@ -2617,6 +2615,294 @@ hr {
     font-size: 18px; /* Giảm kích thước chữ từ 25px xuống 18px */
 }
 
+@media (max-width: 1800px) {
+    .hero-content{
+        margin-left: -3%;
+    }
+
+    .swiper-slide {
+        margin-right: 540px;
+       
+    }
+
+    .review-box{
+        width: 530px;
+    }
+
+}
+
+@media (max-width: 1700px) {
+
+    .swiper-slide {
+        margin-right: 520px;
+       
+    }
+
+    .review-box{
+        width: 510px;
+    }
+
+    /* Nút điều hướng next */
+.swiper-container-next {
+    right:700px;
+}
+
+/* Nút điều hướng prev */
+.swiper-container-prev {
+    left:700px;
+}
+
+}
+
+@media (max-width: 1600px) {
+
+    .hero-content{
+        margin-left: -6%;
+        margin-top: -4%;
+    }
+    .swiper-slide {
+        margin-right: 480px;
+       
+    }
+
+    .review-box{
+        width: 470px;
+    }
+
+    /* Nút điều hướng next */
+.swiper-container-next {
+    right:650px;
+}
+
+/* Nút điều hướng prev */
+.swiper-container-prev {
+    left:650px;
+}
+
+.device-container{
+    margin-right: -30%;
+}
+
+.iphone-slider,.macbook-slider {
+    max-width: 90%;
+}
+
+}
+
+@media (max-width: 1500px) {
+
+    .hero-content{
+        margin-left: 1%;
+    }
+
+    .swiper-slide {
+        margin-right: 450px;
+       
+    }
+
+    .review-box{
+        width: 440px;
+    }
+
+    /* Nút điều hướng next */
+.swiper-container-next {
+    right:600px;
+}
+
+/* Nút điều hướng prev */
+.swiper-container-prev {
+    left:600px;
+}
+
+
+}
+
+@media (max-width: 1400px) {
+
+    .hero-content{
+        margin-left: -3%;
+    }
+
+
+    .swiper-slide {
+        margin-right: 420px;
+       
+    }
+
+    .review-box{
+        width: 410px;
+    }
+
+    /* Nút điều hướng next */
+.swiper-container-next {
+    right:550px;
+}
+
+/* Nút điều hướng prev */
+.swiper-container-prev {
+    left:550px;
+}
+
+.list ul li a p, .list-1 ul li a p{
+    font-size: 14px;
+    margin-left: -30px;
+}
+
+.list-list, .list-list-1{
+    margin-top : 10%;
+}
+
+.settings{
+    margin-left: -25%;
+    width: 50%;
+}
+
+.iphone-slider,.macbook-slider {
+    max-width: 80%;
+}
+
+}
+
+@media (max-width: 1300px) {
+
+    .hero-content{
+        margin-left: -3%;
+    }
+
+    .btn{
+        font-size: 12px;
+    }
+
+    .device-container{
+        margin-right: -30%;
+    }
+
+    .swiper-slide {
+        margin-right: 400px;
+       
+    }
+
+    .review-box{
+        width: 390px;
+    }
+
+    /* Nút điều hướng next */
+.swiper-container-next {
+    right:500px;
+}
+
+/* Nút điều hướng prev */
+.swiper-container-prev {
+    left:500px;
+}
+
+}
+
+@media (max-width: 1200px) {
+
+
+    .btn{
+        font-size: 10px;
+    }
+
+    .device-container{
+        margin-right: -30%;
+    }
+
+    .swiper-slide {
+        margin-right: 370px;
+       
+    }
+
+    .review-box{
+        width: 360px;
+    }
+
+    /* Nút điều hướng next */
+.swiper-container-next {
+    right:450px;
+}
+
+/* Nút điều hướng prev */
+.swiper-container-prev {
+    left:450px;
+}
+
+.list ul li a p, .list-1 ul li a p{
+    font-size: 12px;
+    margin-left: -40px;
+}
+
+.list-list, .list-list-1{
+    margin-top : 10%;
+}
+
+.settings{
+    width: 30%;
+    margin-left: -35%;
+}
+
+.banner-2 {
+    font-size: 12px;
+}
+
+
+}
+
+@media (max-width: 1100px) {
+
+    .hero-content h1{
+        font-size: 30px;
+    }
+
+    
+
+    .swiper-button-prev {
+
+        transform: translateX(-230%);
+
+    }
+    
+    /* Nút điều hướng tiếp theo */
+    .swiper-button-next {
+        transform: translateX(230%);
+    }
+    .hero-content{
+        margin-top: -5%;
+    }
+    .btn{
+        font-size: 10px;
+    }
+
+    .device-container{
+        margin-right: -30%;
+    }
+
+    .swiper-slide {
+        margin-right: 330px;
+       
+    }
+
+    .review-box{
+        width: 320px;
+    }
+
+    /* Nút điều hướng next */
+.swiper-container-next {
+    right:400px;
+}
+
+/* Nút điều hướng prev */
+.swiper-container-prev {
+    left:400px;
+}
+
+
+.banner-2 {
+    font-size: 12px;
+}
+
+}
 
 
 /* -----reponsive------ */
@@ -2682,6 +2968,7 @@ hr {
         background-color: white;
     }
 
+
     .navbar-menu li {
         text-align: justify;
         text-transform: uppercase;
@@ -2735,29 +3022,6 @@ hr {
     }
 
 
-    .navbar-right {
-        white-space: nowrap; /* Đảm bảo các nút không xuống dòng */
-    }
-    
-  
-    .button.change-logs, .button.open-store-now {
-        margin-left: 1em;
-        display: inline-block;
-        text-align: center;
-        padding: 5% 2%;
-    }
-
-
-    .slide-2{
-        gap: 0.005vw;
-        width: 130%;
-        margin-left: -15px;
-    }
-
-    .achievement-item{
-        margin-left: -13%;
-    }
-
     .products li {
         flex-basis: calc(33.33% - 15px); /* Thay đổi để chia thành 3 cột */
         margin-bottom: 30px;
@@ -2784,7 +3048,13 @@ hr {
         }
     }
     
-    
+    .device-container{
+        margin-left: -25%;
+    }
+
+    .macbook-slider,.iphone-slider{
+        max-width: 100%;
+    }
     .hero {
         height: auto;
         padding: 2%; /* Sử dụng tỷ lệ phần trăm cho padding */
@@ -2796,64 +3066,30 @@ hr {
     }
     
     .hero-content {
-       margin-top: 5%;
-        margin-left: 0;
-        text-align: center;
+       margin-top: 15%;
         z-index:2;
         order: 2;
+        margin-left: -15%;
+        max-width: 100%;
+        text-align: center;
     }
 
+    .btn.buy, .btn.trial{
+        font-size: 18px;
+        text-align: center;
+    }
 
     
     .hero-content p {
+        font-size: 18px; /* Sử dụng viewport width (vw) để phù hợp với kích thước màn hình */
         text-align: center;
-        font-size: 1.5vw; /* Sử dụng viewport width (vw) để phù hợp với kích thước màn hình */
     }
     
     .hero-container h1 {
+        font-size: 48px; /* Sử dụng viewport width (vw) để phù hợp với kích thước màn hình */
         text-align: center;
-        font-size: 3vw; /* Sử dụng viewport width (vw) để phù hợp với kích thước màn hình */
     }
     
-    .sliders-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        z-index: 2; /* Ensures iphone-slider is above macbook-slider if needed */
-        width: 100%;
-    }
-    .macbook-slider {
-        max-width: 80%;
-        position: relative;
-        margin-left: 50px;
-        z-index: 2; /* Ensures iphone-slider is above macbook-slider if needed */
-    }
-    
-    .iphone-slider {
-        width: 50%;
-        position: relative;
-        z-index: 2; /* Ensures iphone-slider is above macbook-slider if needed */
-        transform: translateY(-650px);
-        margin: -50px;
-        margin-top: 5rem;
-    }
-    .hero-content h1,
-    .hero-content p {
-        margin-left: 0;
-    }
-    
-    .btn.buy, .btn.trial {
-        display: inline-block; /* Đảm bảo khung nằm ngang */
-        text-align: center; /* Căn giữa chữ bên trong nút */
-        padding: 2% 5%; /* Đặt padding cho chiều ngang dưới dạng phần trăm */
-        margin-right: 2%; /* Khoảng cách giữa các nút dưới dạng phần trăm */
-    }
-
-    .hero-content h2 {
-        font-size: 14px;
-        
-    }
 
     .triangle.banner-parallax-layer{
         margin-bottom: 30%;
@@ -2862,21 +3098,37 @@ hr {
         z-index: 1; /* Ensures iphone-slider is above macbook-slider if needed */
     }
 
+    .slide{
+        margin-top :30%;
+    }
+
+    .slide-item{
+        height: 350px;
+        padding: 10px 20px;
+    }
+
     .slide-introduce {
         display: flex;
-        /* justify-content: flex-end; */
         padding: 0;
         margin-top: -50%;
     }
 
+
+    .content-wrapper p{
+        font-size: 1rem;
+    }
+
+    .content-wrapper h3{
+        font-size: 1.75rem;
+    }
     .achievement-1 p{
         text-align: center;
-        font-size: 15px;
+        font-size: 1rem;
     }
 
     .achievement-1 h1{
         text-align: center;
-        font-size: 30px;
+        font-size: 1.75rem;
     }
 
 
@@ -2889,23 +3141,26 @@ hr {
         text-align: center; /* Căn giữa hình ảnh */
     }
 
+    .buttons{
+        margin-right: 0;
+    }
     .achievement-4{
         margin-top: 10%;
     }
     .achievement-4 .top h1{
         text-align: center;
-        font-size: 30px;
+        font-size: 1.75rem;
         display: inline-block;
     }
 
     .achievement-4 .top h2{
-        text-align: center;
-        font-size: 50px;
+        font-size: 1.75rem;
+        
     }
 
     .achievement-4 .top h2::after {
         content: '+';
-        font-size: 30px; /* Font size relative to viewport width */
+        font-size: 1.75rem; /* Font size relative to viewport width */
         position: absolute;
         top: 0;
         right: -20px; /* Position relative to the heading */
@@ -2913,88 +3168,40 @@ hr {
     }
 
     .achievement-4 .bot p{
-        text-align: center;
-        font-size: 15px;
+        font-size: 1rem;
+        margin-left: 0; 
+        margin-right: 0; 
+
     }
 
-    .list-list{
-        height: 30px;
-        width: 90%;
-    }
 
-    .list ul {
-        list-style-type: none; /* Loại bỏ ký hiệu danh sách mặc định */
-        padding: 0; /* Xóa padding mặc định */
-        display: flex; /* Sử dụng flexbox để căn chỉnh các mục */
-        flex-wrap: wrap; /* Cho phép các mục chồng lên nhau khi không đủ không gian */
-        gap: 0.5%; /* Khoảng cách giữa các mục */
-        margin-top: -0.5%;
-    }
-    
-    
-    .list ul li a p {
-        color: black; /* Default text color */
-        text-decoration: none; /* Remove underline */
-        font-size: 12px;
-    }
-
-    .list-list-1{
-        height: 30px;
-        width: 80%;
-    }
-
-    .list-1 ul {
-        list-style-type: none; /* Loại bỏ ký hiệu danh sách mặc định */
-        padding: 0; /* Xóa padding mặc định */
-        display: flex; /* Sử dụng flexbox để căn chỉnh các mục */
-        flex-wrap: wrap; /* Cho phép các mục chồng lên nhau khi không đủ không gian */
-        gap: 4.5%; /* Khoảng cách giữa các mục */
-        margin-top: -0.5%;
-    }
-
-    .content-wrapper p{
-        font-size: 1.3vw;
-    }
-
-    .content-wrapper h3{
-        font-size: 2vw;
-    }
-    
-    
-    .list-1 ul li a p {
-        color: black; /* Default text color */
-        text-decoration: none; /* Remove underline */
-        font-size: 12px;
-    }
-    
-    
     .bot-1 p{
         text-align: center;
-        font-size: 15px;
+        font-size: 1rem;
+        margin-right:0;
+        margin-left: 0;
     }
     
     .top-2 h1{
         text-align: center;
-        font-size: 30px;
+        font-size: 1.75rem;
     }
 
     .top-2 p{
         text-align: center;
-        font-size: 15px;
+        font-size: 1rem;
+        margin-right:0;
+        margin-left: 0;
     }
     
     .bot-2 p{
-        text-align: center;
-        font-size: 15px;
-    }
-
-     
-    .center img{
-        max-width: 120%;
+        font-size: 1rem;
+        margin-right:0;
+        margin-left: 0;
     }
 
     .column th{
-        font-size: 12px;
+        font-size: 1rem;
     }
 
 
@@ -3006,38 +3213,19 @@ hr {
         margin-top: 15%;
     }
 
-    .main-preview {
-        margin-top: 30%;
-        left: -30%;
-    }
+
 
     .full-images{
         margin-top: 5%;
     }
 
+    .slick-dots{
+        margin-top: 15px;
+    }
+
     .warning-container p{
         font-size: 15px;
         margin-bottom:5%;
-    }
-
-    .image-1 {
-        width: 320px;
-        height: 430px;
-    }
-
-    .image-2 {
-        width: 210px;
-        height: 230px;
-    }
-
-    .image-3 {
-        width: 215px;
-        height: 170px;
-    }
-
-    .image-4 {
-        width: 220px;
-        height: 350px;
     }
 
     .banner{
