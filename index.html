@@ -15,6 +15,8 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 <link rel="shortcut icon" href="assets/images/logo.jpg" type="image/x-icon">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
 <header>
@@ -266,8 +268,8 @@
     
 
 <div class="banner-2" id="banner">
-    <span class="offer-text">3 Days Free + 1 Month for $1 - Start your Shopify FREE TRIAL </span>
-    <span class="arrow">--→</span>
+    <span class="offer-text">3 Days Free + 1 Month for $1 - Start your Shopify FREE TRIAL </span> 
+    <span class="arrow"><i class="fa-solid fa-right-long"></i></span>
     <span class="close-btn" id="close-btn">✕</span>
 </div>
 <script>
@@ -1334,54 +1336,82 @@ document.getElementById('close-btn').addEventListener('click', function() {
         
         <div class="container1">
             <div class="performance">
-                <div class="grade">
-                    <h1>A</h1>
-                </div>
-                <div class="stats">
-                    <p>Performance <span>99%</span></p>
-                    <p>Structure <span>96%</span></p>
-                </div>
+                <canvas id="myChart" width="400" height="400"></canvas>
+
             </div>
             <div class="optimal-performance">
-                <h2>Grete Performance</h2>
-                <p>Optimal performance</p>
+                <h1>Great Performance</h1>
+                <h2>Optimal performance</h2>
                 <p>Ensure a smooth and efficient journey for your visitors, enhancing their overall experience on your Shopify store.</p>
             </div>
             <div class="revenue-growth">
-                <h2>Potential Revenue Growth</h2>
+                <h1>Potential Revenue Growth</h1>
                 <p>Stronger together with our best marketing tools. You will know how finance and marketing should collaborate to maximize profitability demand.</p>
             </div>
             <div class="total-sales">
-                <h2>Total Sales: <span>$28,171</span></h2>
-                <p>+139.35%</p>
-                <img src="" alt="Sales Chart">
+                <h2>Total Sales: <span>$21,320</span></h2>
+                <p>+122.87%</p>
+                <canvas id="salesChart"></canvas> <!-- Dùng canvas để vẽ biểu đồ -->
             </div>
         </div>
 
+        <script>
+            
+        </script>
+        <script>
+            var ctx = document.getElementById('salesChart').getContext('2d');
+var salesChart = new Chart(ctx, {
+    type: 'line', // Dạng biểu đồ
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'], // Nhãn trục X
+        datasets: [{
+            label: 'Total Sales',
+            data: [5000, 10000, 7500, 15000, 18000, 23000, 21320], // Dữ liệu
+            backgroundColor: 'rgba(255, 99, 132, 0.2)', // Màu nền
+            borderColor: 'rgba(255, 99, 132, 1)', // Màu đường viền
+            borderWidth: 2,
+            pointBackgroundColor: 'red', // Màu điểm trên đường
+            pointRadius: 5 // Kích thước điểm
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true // Bắt đầu từ 0 ở trục Y
+            }
+        }
+    }
+});
+
+        </script>
+        
+
         <div class="container2">
             <div class="search-section">
-                <div class="search-bar">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Google Logo" class="google-logo">
-                    <div class="search-input">
-                        <input type="text" value="When customers search for a product" readonly>
-                        <button><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg" alt="Search Icon"></button>
+                <div class="search-bar-wrapper">
+                    <div class="search-bar">
+                        <img src="assets/images/google-logo.png" alt="Google Logo" class="google-logo">
+                        <div class="search-input">
+                            <img src="assets/images/searching-field.png" alt="Search Icon" class="search-icon">
+                        </div>
                     </div>
                 </div>
+                
                 <div class="search-results">
                     <div class="shopify-result">
-                        <p>Your Shopify Store</p>
+                        <img src="assets/images/active-search-result.png" alt="Shopify Result" class="shopify-icon">
                     </div>
                     <div class="other-results">
-                        <div class="result"></div>
-                        <div class="result"></div>
-                        <div class="result"></div>
-                        <div class="result"></div>
+                        <img src="assets/images/search-result.png" alt="Result 1" class="other-icon">
+                        <img src="assets/images/search-result-2.png" alt="Result 2" class="other-icon">
                     </div>
-                </div>
+                </div>     
             </div>
+            
+            
             <div class="seo-content">
-                <h2>Powerful SEO With Ella</h2>
-                <p><strong>Online Store 2.0</strong></p>
+                <h1>Powerful SEO With Ella</h1>
+                <h2>Online Store 2.0</h2>
                 <p>Doing SEO for your website will help you rank higher in the search engine rankings (SERP) so it will have a chance to show up before people are interested and thereby have a chance to turn them into customers yourself.</p>
             </div>
         </div>
