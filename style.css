@@ -214,7 +214,7 @@ html, body {
 .achievement-4 {
     margin-top: 3%; /* Margin from the top of the section */
     position: relative;
-    background-color: #f9f9f9;
+    background-color: none;
     height: 20vh; /* Height relative to viewport height for responsiveness */
     padding: 2%; /* Padding around content */
     box-shadow: 0 0.5% 0.5% rgba(0, 0, 0, 0.1); /* Subtle shadow */
@@ -564,7 +564,8 @@ html, body {
 .list-list-2 {
     position: relative;
     height: 40%; /* Đặt chiều cao theo phần trăm */
-    margin-top: 2%
+    margin-top: 2%;
+
 }
 
 .swiper-button-prev {
@@ -680,6 +681,8 @@ html, body {
     display: relative;
     margin-left: 5%;
     margin-right: 5%;
+    background-color: #f9f9f9;
+
 }
 
 .center img {
@@ -943,6 +946,62 @@ canvas {
     height: auto;
 }
 
+.total-sales {
+    position: relative;
+    width: 100%; /* Đặt chiều rộng là 100% để nó chiếm toàn bộ không gian của phần chứa */
+    max-width: 800px; /* Chiều rộng tối đa của canvas */
+    height: 400px; /* Chiều cao cố định */
+}
+
+.percent-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 128, 0, 0.1);
+    border-radius: 15px;
+    padding: 10px 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Đảm bảo box rộng đủ để chứa các phần tử */
+    white-space: nowrap; /* Không cho phép xuống dòng */
+}
+
+.total-sales h2 {
+    font-size: 1.5em;
+    font-weight: normal;
+    margin: 0;
+}
+
+#totalSales {
+    font-weight: bold;
+    color: black;
+}
+
+#percentChange {
+    color: green;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    white-space: nowrap; /* Không cho phép xuống dòng cho p */
+}
+
+
+#customChart {
+    width: 100%; /* Để canvas chiếm 100% chiều rộng của phần chứa */
+    height: 100%; /* Để canvas chiếm 100% chiều cao của phần chứa */
+}
+
+#movingCircle {
+    position: absolute;
+    width: 2.5rem; /* Kích thước hình tròn */
+    height: 2.5rem; /* Kích thước hình tròn */
+    background-color: red;
+    border: 0.5rem solid white; /* Đường viền hình tròn */
+    border-radius: 50%; /* Hình tròn */
+    z-index: 10; /* Để hiển thị trên canvas */
+}
+
+
+
 
 .container2 {
     display: grid;
@@ -1126,13 +1185,10 @@ canvas {
 
 .container-5 {
     text-align: center;
-    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
     margin-top: 10%;
 }
 
@@ -2482,13 +2538,13 @@ canvas {
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 30px; /* Increased padding */
+    padding: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 560px; /* Adjusted width for a larger box */
-    height: 450px;
+    width: 560px; /* Giữ nguyên chiều rộng */
+    min-height: 450px; /* Đặt chiều cao tối thiểu */
     margin: 20px auto;
     font-family: Arial, sans-serif;
-    margin-bottom: -180px;
+    transition: all 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà */
 }
 
 .review-header {
@@ -2530,18 +2586,36 @@ hr {
     margin: 10px 0;
 }
 
+/* Review content box with limited height by default */
 .review-content {
     color: #333;
     line-height: 1.5;
     font-size: 1em;
-    max-height: 100px; /* Chiều cao giới hạn cho trạng thái thu gọn */
-    overflow: hidden; /* Ẩn phần văn bản vượt quá chiều cao */
-    transition: max-height 0.3s ease; /* Hiệu ứng chuyển tiếp mượt mà */
+    max-height: 100px; /* Chiều cao ban đầu của nội dung (bị rút gọn) */
+    overflow: hidden; /* Ẩn nội dung nếu vượt quá chiều cao ban đầu */
+    transition: max-height 0.3s ease; /* Hiệu ứng mượt mà cho chiều cao nội dung */
 }
 
-
 .review-content.expanded {
-    max-height: none; /* Cho phép chiều cao mở rộng không giới hạn */
+    max-height: none; /* Khi mở rộng, cho phép hiển thị toàn bộ nội dung */
+}
+
+/* Button styling */
+.read-more-btn {
+    display: inline-block;
+    color: #ff5722;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* Hover effect for button */
+.read-more-btn:hover {
+    text-decoration: underline;
 }
 
 
